@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "Maghrib Time — Bönetider världen över",
+    "description": "Exakta bönetider för alla städer i världen — Fajr, Dhuhr, Asr, Maghrib och Isha, med qibla-riktning och månadskalender."
+  },
+  "nav": {
+    "siteName": "Maghrib Time",
+    "home": "Hem",
+    "searchPlaceholder": "Sök efter en stad eller ett land…"
+  },
+  "home": {
+    "heading": "Bönetider, Överallt",
+    "subheading": "Fajr, Dhuhr, Asr, Maghrib och Isha för varje land, region och stad i världen.",
+    "browseByCountry": "Bläddra efter land",
+    "searchLabel": "Hitta din stad",
+    "statLine": "{cities} städer · {countries} länder · {languages} språk",
+    "popularCitiesHeading": "Bönetider i större städer",
+    "popularCitiesIntro": "Fajr och Maghrib den {date}, beräknade utifrån varje stads egna koordinater och tidszon:",
+    "browseIntro": "Alla länder vi täcker, grupperade efter världsdel. Varje land öppnar en lista över sina regioner och städer.",
+    "aboutHeading": "Så beräknas dessa tider",
+    "aboutBody": "Bönetider hämtas inte ur en tabell — de beräknas utifrån solens läge för den exakta latituden och longituden på den plats du tittar på, och räknas sedan om till platsens egen tidszon. Därför visar en stad 100 km längre österut en något tidigare Maghrib, och därför förskjuts tiderna en aning varje dag.",
+    "aboutMethods": "Olika instanser sätter vinklarna för Fajr och Isha olika. Varje sida använder som standard den metod som är vanlig i det landet — Umm al-Qura i Saudiarabien, Karachi i Pakistan, ISNA i Nordamerika — och du kan ändra både metod och madhhab för Asr på vilken stadssida som helst.",
+    "aboutAccuracy": "Tiderna är astronomiska beräkningar, inte ett tillkännagivande från en moské. Lokala kommittéer tillämpar ibland några minuters skillnad, särskilt för Fajr och Isha. Där din lokala moské avviker, följ din lokala moské.",
+    "faqHeading": "Vanliga frågor"
+  },
+  "country": {
+    "heading": "Bönetider i {country}",
+    "capitalLine": "Huvudstad: {capital} · {continent}",
+    "statesHeading": "Regioner och provinser",
+    "citiesHeading": "Städer",
+    "metaTitle": "Bönetider {country} — Alla städer",
+    "metaDescription": "Bönetider för varje stad i {country} — Fajr, Dhuhr, Asr, Maghrib och Isha, beräknade utifrån varje stads läge och tidszon."
+  },
+  "state": {
+    "heading": "Bönetider i {state}, {country}",
+    "citiesHeading": "Städer",
+    "pageInfo": "(sida {page} av {totalPages}, {total} totalt)",
+    "metaTitle": "Bönetider {state} — {country}",
+    "metaDescription": "Bönetider för städer i {state}, {country} — Fajr, Dhuhr, Asr, Maghrib och Isha, beräknade utifrån varje stads koordinater."
+  },
+  "city": {
+    "headingWithState": "Bönetider i {city}, {state}, {country}",
+    "heading": "Bönetider i {city}, {country}",
+    "tagline": "Fajr, Dhuhr, Asr, Maghrib och Isha — uppdaterat live för idag",
+    "faqHeading": "Vanliga frågor",
+    "nearbyHeading": "Andra städer i närheten",
+    "attribution": "Platsdata från <geonames>GeoNames.org</geonames> (CC BY 4.0). Bönetiderna är beräknade, inte officiella — kontrollera med din lokala moské för församlingens tider.",
+    "metaTitle": "Bönetider {city} — {country}",
+    "metaDescription": "Exakta bönetider för {city}, {country} — Fajr, Dhuhr, Asr, Maghrib och Isha idag, med qibla-riktning, hijri-datum och månadskalender."
+  },
+  "prayers": {
+    "fajr": "Fajr",
+    "sunrise": "Soluppgång",
+    "dhuhr": "Dhuhr",
+    "asr": "Asr",
+    "maghrib": "Maghrib",
+    "isha": "Isha"
+  },
+  "table": {
+    "next": "Nästa",
+    "in": "om",
+    "loading": "Laddar dagens tider…"
+  },
+  "methodSelector": {
+    "toggle": "Byt beräkningsmetod och madhhab",
+    "methodLabel": "Metod",
+    "madhabLabel": "Madhhab (Asr)",
+    "shafi": "Shafi",
+    "hanafi": "Hanafi"
+  },
+  "calendar": {
+    "show": "Visa månadskalender",
+    "hide": "Dölj månadskalender",
+    "date": "Datum"
+  },
+  "qibla": {
+    "heading": "Qibla-riktning",
+    "fromNorth": "{deg} från sant norr"
+  },
+  "hijri": {
+    "heading": "Hijri-datum",
+    "approximate": "(ungefärligt)",
+    "yearSuffix": "AH"
+  },
+  "faq": {
+    "fajrQuestion": "Vad är Fajr-tiden i {city} idag?",
+    "fajrAnswer": "Fajr-tiden i {city} ändras dagligen med solens position — se dagens exakta tid i tabellen ovan, beräknad live för {city}s koordinater och tidszon.",
+    "methodQuestion": "Vilken beräkningsmetod används för {city}, {country}?",
+    "methodAnswer": "Bönetiderna för {city} använder som standard beräkningsmetoden {method}. Du kan ändra metod och madhhab med väljaren ovanför tidstabellen.",
+    "qiblaQuestion": "Vilken är Qibla-riktningen från {city}?",
+    "qiblaAnswer": "Qibla-riktningen från {city} visas ovan som en vinkel i grader från sant norr, beräknad som storcirkelriktningen mot Kaba i Mecka."
+  },
+  "description": {
+    "text": "Bönetiderna i {place} beräknas med metoden {method} (madhhab {madhab} för Asr). {city} ligger på {lat}°, {lon}°, i tidszonen {timezone}."
+  },
+  "pagination": {
+    "prev": "Föregående",
+    "next": "Nästa"
+  },
+  "search": {
+    "heading": "Sök",
+    "resultsFor": "Sökresultat för ”{query}”",
+    "noResults": "Inga platser hittades som matchar ”{query}”.",
+    "countryLabel": "Land"
+  },
+  "notFound": {
+    "heading": "Sidan hittades inte",
+    "body": "Vi kunde inte hitta den sidan.",
+    "homeLink": "Gå till startsidan"
+  },
+  "apps": {
+    "heading": "Appar för bönetider",
+    "intro": "Vill du ha tiderna i mobilen, med adhan-avisering? De här apparna används av många.",
+    "reviewCount": "{count} recensioner",
+    "installs": "{count} nedladdningar",
+    "googlePlay": "Google Play",
+    "appStore": "App Store",
+    "ratingsNote": "Betyg och nedladdningar kommer från Google Play, noterade den {date}. De uppdateras inte live.",
+    "descriptions": {
+      "athan": "Verifierade bönetider och adhan-aviseringar, plus Koranen, en qibla-sökare och dagliga islamiska mål — från IslamicFinder.org.",
+      "dawateislami": "Exakta bönetider och qibla-riktning som hjälper dig hålla dig konsekvent med dina fem dagliga böner.",
+      "muslimpro": "En komplett islamisk följeslagare: verifierade bönetider, adhan-aviseringar, hela Koranen och en exakt qibla-riktning."
+    }
+  },
+  "continents": {
+    "AF": "Afrika",
+    "AS": "Asien",
+    "EU": "Europa",
+    "NA": "Nordamerika",
+    "SA": "Sydamerika",
+    "OC": "Oceanien",
+    "AN": "Antarktis"
+  },
+  "countryContent": {
+    "cityTimesItem": "Fajr {fajr} · Maghrib {maghrib}",
+    "largestCitiesIntro": "Fajr och Maghrib den {date} i de folkrikaste städerna vi täcker:"
+  },
+  "stateContent": {
+    "cityTimesItem": "Fajr {fajr} · Maghrib {maghrib}",
+    "topCitiesIntro": "Fajr och Maghrib den {date} i de största orterna vi täcker i {state}:"
+  },
+  "homeFaq": {
+    "coverageQuestion": "Vilka städer täcks?",
+    "coverageAnswer": "{cities} städer i {countries} länder — varje bebodd ort med fler än 15 000 invånare, enligt databasen GeoNames. Varje ort har en egen sida med dagens fem bönetider, soluppgång, Qibla-riktning och ett komplett månadsschema.",
+    "accuracyQuestion": "Hur exakta är tiderna?",
+    "accuracyAnswer": "De beräknas med de astronomiska standardformler som det välrenommerade adhan-biblioteket använder, utifrån varje stads verkliga koordinater och tidszon — samma metod som etablerade böneappar använder. Fajr och Isha beror på en vald solvinkel, så dessa två kan skilja sig några minuter mellan olika instanser.",
+    "methodQuestion": "Kan jag byta beräkningsmetod?",
+    "methodAnswer": "Ja. Varje stadssida har en väljare för metod och madhhab ovanför tidstabellen. Ditt val sparas på den enheten och gäller för varje stad du besöker därefter.",
+    "qiblaQuestion": "Visar webbplatsen Qibla-riktningen?",
+    "qiblaAnswer": "Varje stadssida anger Qibla som en vinkel i grader från sant norr, plus storcirkelavståndet till Kaba i Mekka. Om du använder en magnetisk kompass, kom ihåg att ta hänsyn till den lokala missvisningen."
+  },
+  "shadow": {
+    "once": "en gång",
+    "twice": "två gånger"
+  },
+  "footer": {
+    "tagline": "Bönetider för varje stad i världen, beräknade utifrån varje plats egna koordinater och tidszon.",
+    "exploreHeading": "Utforska",
+    "siteHeading": "Om webbplatsen",
+    "legalHeading": "Juridiskt",
+    "home": "Hem",
+    "search": "Sök stad",
+    "about": "Om oss",
+    "contact": "Kontakt",
+    "privacy": "Integritetspolicy",
+    "terms": "Användarvillkor",
+    "disclaimer": "Ansvarsfriskrivning",
+    "copyright": "© {year} {site}. Prayer times are calculated, not an official religious ruling.",
+    "dataCredit": "Place data from <geonames>GeoNames</geonames>, licensed CC BY 4.0."
+  },
+  "pages": {
+    "lastUpdated": "Senast uppdaterad: {date}",
+    "aboutTitle": "Om oss",
+    "contactTitle": "Kontakt",
+    "privacyTitle": "Integritetspolicy",
+    "termsTitle": "Användarvillkor",
+    "disclaimerTitle": "Ansvarsfriskrivning"
+  }
+}

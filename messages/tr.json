@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "Maghrib Time — Dünya Geneli Namaz Vakitleri",
+    "description": "Dünyadaki her şehir için doğru namaz vakitleri — İmsak, Öğle, İkindi, Akşam ve Yatsı, kıble yönü ve aylık takvim ile."
+  },
+  "nav": {
+    "siteName": "Maghrib Time",
+    "home": "Ana Sayfa",
+    "searchPlaceholder": "Şehir veya ülke ara…"
+  },
+  "home": {
+    "heading": "Namaz Vakitleri, Her Yerde",
+    "subheading": "Dünyadaki her ülke, eyalet ve şehir için İmsak, Öğle, İkindi, Akşam ve Yatsı vakitleri.",
+    "browseByCountry": "Ülkeye göre gözat",
+    "searchLabel": "Şehrinizi bulun",
+    "statLine": "{cities} şehir · {countries} ülke · {languages} dil",
+    "popularCitiesHeading": "Büyük şehirlerde namaz vakitleri",
+    "popularCitiesIntro": "{date} tarihinde İmsak ve Akşam, her şehrin kendi koordinatları ve saat dilimine göre hesaplanmış:",
+    "browseIntro": "Kapsadığımız her ülke, kıtalara göre gruplanmış. Her biri kendi bölgelerinin ve şehirlerinin listesini açar.",
+    "aboutHeading": "Bu vakitler nasıl hesaplanıyor",
+    "aboutBody": "Namaz vakitleri bir tablodan alınmaz — görüntülediğiniz yerin tam enlem ve boylamı için güneşin konumundan hesaplanır, sonra o yerin kendi saat dilimine çevrilir. 100 km doğudaki bir şehrin Akşam vaktinin biraz daha erken olmasının ve vakitlerin her gün biraz kaymasının sebebi budur.",
+    "aboutMethods": "Farklı kurumlar İmsak ve Yatsı açılarını farklı belirler. Her sayfa varsayılan olarak o ülkede yaygın kullanılan yöntemi kullanır — Suudi Arabistan'da Ümmü'l-Kura, Pakistan'da Karaçi, Kuzey Amerika'da ISNA — ve herhangi bir şehir sayfasında hem yöntemi hem de İkindi mezhebini değiştirebilirsiniz.",
+    "aboutAccuracy": "Bu vakitler astronomik hesaplamalardır, bir camiden yapılan duyuru değildir. Yerel heyetler bazen özellikle İmsak ve Yatsı için birkaç dakikalık fark benimser. Yerel camiiniz farklıysa yerel camiinizi izleyin.",
+    "faqHeading": "Sık sorulan sorular"
+  },
+  "country": {
+    "heading": "{country} Namaz Vakitleri",
+    "capitalLine": "Başkent: {capital} · {continent}",
+    "statesHeading": "Eyaletler ve iller",
+    "citiesHeading": "Şehirler",
+    "metaTitle": "{country} Namaz Vakitleri — Tüm Şehirler",
+    "metaDescription": "{country} içindeki her şehir için namaz vakitleri — İmsak, Öğle, İkindi, Akşam ve Yatsı, her şehrin kendi konumuna ve saat dilimine göre hesaplanır."
+  },
+  "state": {
+    "heading": "{state}, {country} Namaz Vakitleri",
+    "citiesHeading": "Şehirler",
+    "pageInfo": "({total} toplam, sayfa {page}/{totalPages})",
+    "metaTitle": "{state} Namaz Vakitleri — {country}",
+    "metaDescription": "{state}, {country} şehirleri için namaz vakitleri — İmsak, Öğle, İkindi, Akşam ve Yatsı, her şehrin kendi koordinatlarına göre."
+  },
+  "city": {
+    "headingWithState": "{city}, {state}, {country} Namaz Vakitleri",
+    "heading": "{city}, {country} Namaz Vakitleri",
+    "tagline": "İmsak, Öğle, İkindi, Akşam ve Yatsı — bugün için canlı güncellenir",
+    "faqHeading": "Sıkça sorulan sorular",
+    "nearbyHeading": "Yakındaki diğer şehirler",
+    "attribution": "Konum verileri <geonames>GeoNames.org</geonames> kaynaklıdır (CC BY 4.0). Vakitler hesaplanmıştır, resmi değildir — cemaat vakitleri için yerel camiinize danışın.",
+    "metaTitle": "{city} Namaz Vakitleri — {country}",
+    "metaDescription": "{city}, {country} için doğru namaz vakitleri — bugünün İmsak, Öğle, İkindi, Akşam ve Yatsı saatleri, kıble yönü, hicri tarih ve aylık takvim ile."
+  },
+  "prayers": {
+    "fajr": "İmsak",
+    "sunrise": "Güneş",
+    "dhuhr": "Öğle",
+    "asr": "İkindi",
+    "maghrib": "Akşam",
+    "isha": "Yatsı"
+  },
+  "table": {
+    "next": "Sıradaki",
+    "in": "kalan süre",
+    "loading": "Bugünün vakitleri yükleniyor…"
+  },
+  "methodSelector": {
+    "toggle": "Hesaplama yöntemini ve mezhebi değiştir",
+    "methodLabel": "Yöntem",
+    "madhabLabel": "Mezhep (İkindi)",
+    "shafi": "Şafi",
+    "hanafi": "Hanefi"
+  },
+  "calendar": {
+    "show": "Aylık takvimi göster",
+    "hide": "Aylık takvimi gizle",
+    "date": "Tarih"
+  },
+  "qibla": {
+    "heading": "Kıble yönü",
+    "fromNorth": "Gerçek kuzeyden {deg}"
+  },
+  "hijri": {
+    "heading": "Hicri tarih",
+    "approximate": "(yaklaşık)",
+    "yearSuffix": "H"
+  },
+  "faq": {
+    "fajrQuestion": "{city} için bugün İmsak vakti saat kaçta?",
+    "fajrAnswer": "{city} için İmsak vakti güneşin konumuna göre her gün değişir — bugünün tam saatini yukarıdaki tabloda, {city} koordinatları ve saat dilimine göre canlı hesaplanmış olarak görebilirsiniz.",
+    "methodQuestion": "{city}, {country} için hangi hesaplama yöntemi kullanılıyor?",
+    "methodAnswer": "{city} için namaz vakitleri varsayılan olarak {method} hesaplama yöntemini kullanır. Vakit tablosunun üzerindeki seçiciyi kullanarak yöntemi ve mezhebi değiştirebilirsiniz.",
+    "qiblaQuestion": "{city} konumundan kıble yönü nedir?",
+    "qiblaAnswer": "{city} konumundan kıble yönü, yukarıda gerçek kuzeyden itibaren derece cinsinden bir açı olarak, Mekke'deki Kâbe'ye büyük daire üzerinden hesaplanan yön olarak gösterilir."
+  },
+  "description": {
+    "text": "{place} için namaz vakitleri {method} yöntemi (İkindi için {madhab} mezhebi) kullanılarak hesaplanır. {city}, {lat}°, {lon}° konumunda, {timezone} saat diliminde yer alır."
+  },
+  "pagination": {
+    "prev": "Önceki",
+    "next": "Sonraki"
+  },
+  "search": {
+    "heading": "Ara",
+    "resultsFor": "\"{query}\" için arama sonuçları",
+    "noResults": "\"{query}\" ile eşleşen bir yer bulunamadı.",
+    "countryLabel": "Ülke"
+  },
+  "notFound": {
+    "heading": "Sayfa bulunamadı",
+    "body": "Bu sayfayı bulamadık.",
+    "homeLink": "Ana sayfaya dön"
+  },
+  "apps": {
+    "heading": "Namaz vakti uygulamaları",
+    "intro": "Vakitleri telefonunuzda ezan bildirimiyle görmek ister misiniz? Bu uygulamalar yaygın olarak kullanılıyor.",
+    "reviewCount": "{count} değerlendirme",
+    "installs": "{count} indirme",
+    "googlePlay": "Google Play",
+    "appStore": "App Store",
+    "ratingsNote": "Puanlar ve indirme sayıları Google Play'den alınmış olup {date} tarihinde kaydedilmiştir. Canlı olarak güncellenmez.",
+    "descriptions": {
+      "athan": "Doğrulanmış namaz vakitleri ve ezan bildirimleri, ayrıca Kur'an, kıble bulucu ve günlük İslami hedefler — IslamicFinder.org'dan.",
+      "dawateislami": "Beş vakit namazınızda düzenli kalmanıza yardımcı olacak doğru namaz vakitleri ve kıble yönü.",
+      "muslimpro": "Eksiksiz bir İslami yardımcı: doğrulanmış namaz vakitleri, ezan bildirimleri, tam Kur'an ve hassas kıble yönü."
+    }
+  },
+  "continents": {
+    "AF": "Afrika",
+    "AS": "Asya",
+    "EU": "Avrupa",
+    "NA": "Kuzey Amerika",
+    "SA": "Güney Amerika",
+    "OC": "Okyanusya",
+    "AN": "Antarktika"
+  },
+  "countryContent": {
+    "cityTimesItem": "İmsak {fajr} · Akşam {maghrib}",
+    "largestCitiesIntro": "{date} tarihinde kapsadığımız en kalabalık şehirlerde İmsak ve Akşam:"
+  },
+  "stateContent": {
+    "cityTimesItem": "İmsak {fajr} · Akşam {maghrib}",
+    "topCitiesIntro": "{date} tarihinde {state} içinde kapsadığımız en büyük yerlerde İmsak ve Akşam:"
+  },
+  "homeFaq": {
+    "coverageQuestion": "Hangi şehirler kapsanıyor?",
+    "coverageAnswer": "{countries} ülkede {cities} şehir — GeoNames veritabanından, nüfusu 15.000'den fazla olan her yerleşim yeri. Her birinin bugünkü beş vakti, güneşin doğuşu, kıble yönü ve tam bir aylık takvimi içeren kendi sayfası var.",
+    "accuracyQuestion": "Vakitler ne kadar doğru?",
+    "accuracyAnswer": "Güvenilir adhan kütüphanesinin kullandığı standart astronomik formüllerle, her şehrin gerçek koordinatları ve saat diliminden hesaplanır — yaygın namaz uygulamalarının kullandığı yaklaşımın aynısı. İmsak ve Yatsı seçilen bir güneş açısına bağlıdır, bu yüzden bu ikisi kurumlar arasında birkaç dakika farklılık gösterebilir.",
+    "methodQuestion": "Hesaplama yöntemini değiştirebilir miyim?",
+    "methodAnswer": "Evet. Her şehir sayfasında vakit tablosunun üzerinde bir yöntem ve mezhep seçici bulunur. Seçiminiz o cihazda hatırlanır ve sonrasında ziyaret ettiğiniz her şehir için geçerli olur.",
+    "qiblaQuestion": "Site kıble yönünü gösteriyor mu?",
+    "qiblaAnswer": "Her şehir sayfası kıbleyi gerçek kuzeyden derece cinsinden bir açı olarak ve Mekke'deki Kâbe'ye olan büyük daire mesafesiyle birlikte verir. Manyetik pusula kullanıyorsanız yerel manyetik sapmayı hesaba katmayı unutmayın."
+  },
+  "shadow": {
+    "once": "bir katı",
+    "twice": "iki katı"
+  },
+  "footer": {
+    "tagline": "Dünyadaki her şehir için namaz vakitleri, her konumun kendi koordinatları ve saat diliminden hesaplanır.",
+    "exploreHeading": "Keşfet",
+    "siteHeading": "Bu site hakkında",
+    "legalHeading": "Yasal",
+    "home": "Ana Sayfa",
+    "search": "Şehir ara",
+    "about": "Hakkında",
+    "contact": "İletişim",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Şartları",
+    "disclaimer": "Sorumluluk Reddi",
+    "copyright": "© {year} {site}. Prayer times are calculated, not an official religious ruling.",
+    "dataCredit": "Place data from <geonames>GeoNames</geonames>, licensed CC BY 4.0."
+  },
+  "pages": {
+    "lastUpdated": "Son güncelleme: {date}",
+    "aboutTitle": "Hakkında",
+    "contactTitle": "İletişim",
+    "privacyTitle": "Gizlilik Politikası",
+    "termsTitle": "Kullanım Şartları",
+    "disclaimerTitle": "Sorumluluk Reddi"
+  }
+}

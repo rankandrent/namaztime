@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "Maghrib Time — Gebedstijden wereldwijd",
+    "description": "Nauwkeurige gebedstijden voor elke stad ter wereld — Fajr, Dhuhr, Asr, Maghrib en Isha, met qibla-richting en maandkalender."
+  },
+  "nav": {
+    "siteName": "Maghrib Time",
+    "home": "Home",
+    "searchPlaceholder": "Zoek een stad of land…"
+  },
+  "home": {
+    "heading": "Gebedstijden, Overal",
+    "subheading": "Fajr, Dhuhr, Asr, Maghrib en Isha voor elk land, elke provincie en elke stad ter wereld.",
+    "browseByCountry": "Blader op land",
+    "searchLabel": "Vind uw stad",
+    "statLine": "{cities} steden · {countries} landen · {languages} talen",
+    "popularCitiesHeading": "Gebedstijden in grote steden",
+    "popularCitiesIntro": "Fajr en Maghrib op {date}, berekend voor de eigen coördinaten en tijdzone van elke stad:",
+    "browseIntro": "Alle landen die we behandelen, gegroepeerd per continent. Elk opent een lijst met zijn regio's en steden.",
+    "aboutHeading": "Hoe deze tijden worden berekend",
+    "aboutBody": "Gebedstijden worden niet uit een tabel gehaald — ze worden berekend uit de stand van de zon voor de exacte breedte- en lengtegraad van de plaats die u bekijkt, en vervolgens omgezet naar de eigen tijdzone van die plaats. Daarom toont een stad 100 km oostelijker een iets vroegere Maghrib, en daarom verschuiven de tijden elke dag een beetje.",
+    "aboutMethods": "Verschillende autoriteiten stellen de hoeken voor Fajr en Isha anders vast. Elke pagina gebruikt standaard de methode die in dat land gebruikelijk is — Umm al-Qura in Saoedi-Arabië, Karachi in Pakistan, ISNA in Noord-Amerika — en u kunt zowel de methode als de madhhab voor Asr op elke stadspagina wijzigen.",
+    "aboutAccuracy": "Deze tijden zijn astronomische berekeningen, geen aankondiging van een moskee. Plaatselijke commissies hanteren soms een paar minuten verschil, vooral voor Fajr en Isha. Waar uw plaatselijke moskee afwijkt, volg dan uw plaatselijke moskee.",
+    "faqHeading": "Veelgestelde vragen"
+  },
+  "country": {
+    "heading": "Gebedstijden in {country}",
+    "capitalLine": "Hoofdstad: {capital} · {continent}",
+    "statesHeading": "Provincies",
+    "citiesHeading": "Steden",
+    "metaTitle": "Gebedstijden {country} — Alle steden",
+    "metaDescription": "Gebedstijden voor elke stad in {country} — Fajr, Dhuhr, Asr, Maghrib en Isha, berekend op basis van locatie en tijdzone van elke stad."
+  },
+  "state": {
+    "heading": "Gebedstijden in {state}, {country}",
+    "citiesHeading": "Steden",
+    "pageInfo": "(pagina {page} van {totalPages}, {total} in totaal)",
+    "metaTitle": "Gebedstijden {state} — {country}",
+    "metaDescription": "Gebedstijden voor steden in {state}, {country} — Fajr, Dhuhr, Asr, Maghrib en Isha, berekend op basis van de coördinaten van elke stad."
+  },
+  "city": {
+    "headingWithState": "Gebedstijden in {city}, {state}, {country}",
+    "heading": "Gebedstijden in {city}, {country}",
+    "tagline": "Fajr, Dhuhr, Asr, Maghrib en Isha — live bijgewerkt voor vandaag",
+    "faqHeading": "Veelgestelde vragen",
+    "nearbyHeading": "Andere steden in de buurt",
+    "attribution": "Locatiegegevens van <geonames>GeoNames.org</geonames> (CC BY 4.0). Gebedstijden zijn berekend en niet officieel — raadpleeg uw lokale moskee voor de tijden van de gemeenschap.",
+    "metaTitle": "Gebedstijden {city} — {country}",
+    "metaDescription": "Nauwkeurige gebedstijden voor {city}, {country} — Fajr, Dhuhr, Asr, Maghrib en Isha van vandaag, met qibla-richting, hidjri-datum en maandkalender."
+  },
+  "prayers": {
+    "fajr": "Fajr",
+    "sunrise": "Zonsopgang",
+    "dhuhr": "Dhuhr",
+    "asr": "Asr",
+    "maghrib": "Maghrib",
+    "isha": "Isha"
+  },
+  "table": {
+    "next": "Volgende",
+    "in": "over",
+    "loading": "Tijden van vandaag laden…"
+  },
+  "methodSelector": {
+    "toggle": "Berekeningsmethode & madhhab wijzigen",
+    "methodLabel": "Methode",
+    "madhabLabel": "Madhhab (Asr)",
+    "shafi": "Shafi'i",
+    "hanafi": "Hanafi"
+  },
+  "calendar": {
+    "show": "Maandkalender tonen",
+    "hide": "Maandkalender verbergen",
+    "date": "Datum"
+  },
+  "qibla": {
+    "heading": "Qibla-richting",
+    "fromNorth": "{deg} vanaf het ware noorden"
+  },
+  "hijri": {
+    "heading": "Hidjri-datum",
+    "approximate": "(bij benadering)",
+    "yearSuffix": "AH"
+  },
+  "faq": {
+    "fajrQuestion": "Hoe laat is het Fajr-gebed vandaag in {city}?",
+    "fajrAnswer": "De Fajr-tijd in {city} verandert dagelijks met de stand van de zon — bekijk de exacte tijd van vandaag in de tabel hierboven, live berekend voor de coördinaten en tijdzone van {city}.",
+    "methodQuestion": "Welke berekeningsmethode wordt gebruikt voor {city}, {country}?",
+    "methodAnswer": "De gebedstijden voor {city} gebruiken standaard de berekeningsmethode {method}. U kunt de methode en madhhab wijzigen met de keuzelijst boven de tijdentabel.",
+    "qiblaQuestion": "Wat is de Qibla-richting vanaf {city}?",
+    "qiblaAnswer": "De Qibla-richting vanaf {city} wordt hierboven weergegeven als een hoek in graden ten opzichte van het ware noorden, berekend als de grootcirkelrichting naar de Kaäba in Mekka."
+  },
+  "description": {
+    "text": "Gebedstijden in {place} worden berekend met de methode {method} (madhhab {madhab} voor Asr). {city} ligt op {lat}°, {lon}°, in de tijdzone {timezone}."
+  },
+  "pagination": {
+    "prev": "Vorige",
+    "next": "Volgende"
+  },
+  "search": {
+    "heading": "Zoeken",
+    "resultsFor": "Zoekresultaten voor \"{query}\"",
+    "noResults": "Geen plaatsen gevonden die overeenkomen met \"{query}\".",
+    "countryLabel": "Land"
+  },
+  "notFound": {
+    "heading": "Pagina niet gevonden",
+    "body": "We konden die pagina niet vinden.",
+    "homeLink": "Naar de startpagina"
+  },
+  "apps": {
+    "heading": "Apps voor gebedstijden",
+    "intro": "Liever de tijden op je telefoon, met een adhan-melding? Deze apps worden veel gebruikt.",
+    "reviewCount": "{count} beoordelingen",
+    "installs": "{count} downloads",
+    "googlePlay": "Google Play",
+    "appStore": "App Store",
+    "ratingsNote": "Beoordelingen en downloadaantallen komen van Google Play, vastgelegd op {date}. Ze worden niet live bijgewerkt.",
+    "descriptions": {
+      "athan": "Geverifieerde gebedstijden en adhan-meldingen, plus de Koran, een qibla-zoeker en dagelijkse islamitische doelen — van IslamicFinder.org.",
+      "dawateislami": "Nauwkeurige gebedstijden en qibla-richting om u te helpen consistent te blijven met uw vijf dagelijkse gebeden.",
+      "muslimpro": "Een complete islamitische metgezel: geverifieerde gebedstijden, adhan-meldingen, de volledige Koran en een nauwkeurige qibla-richting."
+    }
+  },
+  "continents": {
+    "AF": "Afrika",
+    "AS": "Azië",
+    "EU": "Europa",
+    "NA": "Noord-Amerika",
+    "SA": "Zuid-Amerika",
+    "OC": "Oceanië",
+    "AN": "Antarctica"
+  },
+  "countryContent": {
+    "cityTimesItem": "Fajr {fajr} · Maghrib {maghrib}",
+    "largestCitiesIntro": "Fajr en Maghrib op {date} in de dichtstbevolkte steden die we behandelen:"
+  },
+  "stateContent": {
+    "cityTimesItem": "Fajr {fajr} · Maghrib {maghrib}",
+    "topCitiesIntro": "Fajr en Maghrib op {date} in de grootste plaatsen die we in {state} behandelen:"
+  },
+  "homeFaq": {
+    "coverageQuestion": "Welke steden worden behandeld?",
+    "coverageAnswer": "{cities} steden in {countries} landen — elke bewoonde plaats met meer dan 15.000 inwoners, uit de GeoNames-database. Elke plaats heeft een eigen pagina met de vijf gebedstijden van vandaag, zonsopgang, de Qibla-richting en een volledig maandoverzicht.",
+    "accuracyQuestion": "Hoe nauwkeurig zijn de tijden?",
+    "accuracyAnswer": "Ze worden berekend met de standaard astronomische formules die de breed vertrouwde adhan-bibliotheek gebruikt, op basis van de echte coördinaten en tijdzone van elke stad — dezelfde aanpak als gangbare gebedsapps. Fajr en Isha hangen af van een gekozen zonnehoek, dus die twee kunnen tussen autoriteiten enkele minuten verschillen.",
+    "methodQuestion": "Kan ik de berekeningsmethode wijzigen?",
+    "methodAnswer": "Ja. Elke stadspagina heeft boven de tijdentabel een keuzemenu voor methode en madhhab. Uw keuze wordt op dat apparaat onthouden en geldt voor elke stad die u daarna bezoekt.",
+    "qiblaQuestion": "Toont de site de Qibla-richting?",
+    "qiblaAnswer": "Elke stadspagina geeft de Qibla als een hoek in graden ten opzichte van het ware noorden, plus de grootcirkelafstand tot de Kaäba in Mekka. Als u een magnetisch kompas gebruikt, houd dan rekening met de plaatselijke magnetische declinatie."
+  },
+  "shadow": {
+    "once": "eenmaal",
+    "twice": "tweemaal"
+  },
+  "footer": {
+    "tagline": "Gebedstijden voor elke stad ter wereld, berekend op basis van de coördinaten en tijdzone van elke plaats.",
+    "exploreHeading": "Verkennen",
+    "siteHeading": "Over deze site",
+    "legalHeading": "Juridisch",
+    "home": "Home",
+    "search": "Stad zoeken",
+    "about": "Over ons",
+    "contact": "Contact",
+    "privacy": "Privacybeleid",
+    "terms": "Gebruiksvoorwaarden",
+    "disclaimer": "Disclaimer",
+    "copyright": "© {year} {site}. Prayer times are calculated, not an official religious ruling.",
+    "dataCredit": "Place data from <geonames>GeoNames</geonames>, licensed CC BY 4.0."
+  },
+  "pages": {
+    "lastUpdated": "Laatst bijgewerkt: {date}",
+    "aboutTitle": "Over ons",
+    "contactTitle": "Contact",
+    "privacyTitle": "Privacybeleid",
+    "termsTitle": "Gebruiksvoorwaarden",
+    "disclaimerTitle": "Disclaimer"
+  }
+}

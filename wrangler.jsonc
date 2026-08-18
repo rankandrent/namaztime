@@ -1,0 +1,28 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "maghrib-time",
+  "main": ".open-next/worker.js",
+  // Bump this whenever revisiting deploy config — Workers behavior can be
+  // gated by compatibility date, and OpenNext requires 2024-09-23+.
+  "compatibility_date": "2026-08-18",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    // Only the build-time pre-rendered pages + JS/CSS/images live here —
+    // ISR pages rendered after build go to the KV incremental cache
+    // instead (see open-next.config.ts). This keeps the file count well
+    // under the 100,000-per-version Workers Paid limit.
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // OpenNext's own Worker calls back into itself (e.g. to trigger ISR
+  // revalidation via a self-fetch) — this binding is how it does that
+  // without a real network hop.
+  "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "maghrib-time" }],
+  "kv_namespaces": [
+    { "binding": "NEXT_INC_CACHE_KV", "id": "6e84dfb455ad446dabede9dd0ef965d6" },
+    { "binding": "NEXT_TAG_CACHE_KV", "id": "e342eb29850d4449bbbe6e2c0563162a" }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

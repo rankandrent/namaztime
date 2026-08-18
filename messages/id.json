@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "Maghrib Time — Jadwal Sholat Seluruh Dunia",
+    "description": "Jadwal sholat akurat untuk kota mana pun di dunia — Subuh, Zuhur, Ashar, Maghrib dan Isya, dengan arah kiblat dan jadwal bulanan."
+  },
+  "nav": {
+    "siteName": "Maghrib Time",
+    "home": "Beranda",
+    "searchPlaceholder": "Cari kota atau negara…"
+  },
+  "home": {
+    "heading": "Jadwal Sholat, Di Mana Saja",
+    "subheading": "Subuh, Zuhur, Ashar, Maghrib, dan Isya untuk setiap negara, provinsi, dan kota di dunia.",
+    "browseByCountry": "Jelajahi berdasarkan negara",
+    "searchLabel": "Cari kota Anda",
+    "statLine": "{cities} kota · {countries} negara · {languages} bahasa",
+    "popularCitiesHeading": "Jadwal sholat di kota-kota besar",
+    "popularCitiesIntro": "Subuh dan Maghrib pada {date}, dihitung untuk koordinat dan zona waktu masing-masing kota:",
+    "browseIntro": "Semua negara yang kami cakup, dikelompokkan menurut benua. Masing-masing membuka daftar provinsi dan kotanya.",
+    "aboutHeading": "Bagaimana jadwal ini dihitung",
+    "aboutBody": "Waktu sholat tidak diambil dari tabel — waktu tersebut dihitung dari posisi matahari untuk lintang dan bujur persis tempat yang Anda lihat, lalu dikonversi ke zona waktu tempat itu sendiri. Itulah sebabnya kota 100 km di sebelah timur menunjukkan Maghrib sedikit lebih awal, dan mengapa waktunya bergeser sedikit setiap hari.",
+    "aboutMethods": "Lembaga yang berbeda menetapkan sudut Subuh dan Isya secara berbeda. Setiap halaman menggunakan metode yang lazim di negara tersebut secara bawaan — Umm al-Qura di Arab Saudi, Karachi di Pakistan, ISNA di Amerika Utara — dan Anda dapat mengubah metode maupun mazhab Ashar di halaman kota mana pun.",
+    "aboutAccuracy": "Waktu ini adalah perhitungan astronomis, bukan pengumuman dari masjid. Komite setempat kadang menetapkan selisih beberapa menit, terutama untuk Subuh dan Isya. Bila masjid setempat Anda berbeda, ikutilah masjid setempat Anda.",
+    "faqHeading": "Pertanyaan umum"
+  },
+  "country": {
+    "heading": "Jadwal Sholat di {country}",
+    "capitalLine": "Ibu kota: {capital} · {continent}",
+    "statesHeading": "Provinsi",
+    "citiesHeading": "Kota",
+    "metaTitle": "Jadwal Sholat {country} — Semua Kota",
+    "metaDescription": "Jadwal sholat untuk setiap kota di {country} — Subuh, Zuhur, Ashar, Maghrib dan Isya, dihitung sesuai lokasi dan zona waktu tiap kota."
+  },
+  "state": {
+    "heading": "Jadwal Sholat di {state}, {country}",
+    "citiesHeading": "Kota",
+    "pageInfo": "(halaman {page} dari {totalPages}, total {total})",
+    "metaTitle": "Jadwal Sholat {state} — {country}",
+    "metaDescription": "Jadwal sholat untuk kota-kota di {state}, {country} — Subuh, Zuhur, Ashar, Maghrib dan Isya, dihitung sesuai koordinat tiap kota."
+  },
+  "city": {
+    "headingWithState": "Jadwal Sholat di {city}, {state}, {country}",
+    "heading": "Jadwal Sholat di {city}, {country}",
+    "tagline": "Subuh, Zuhur, Ashar, Maghrib, dan Isya — diperbarui langsung untuk hari ini",
+    "faqHeading": "Pertanyaan yang sering diajukan",
+    "nearbyHeading": "Kota lain di sekitar",
+    "attribution": "Data lokasi dari <geonames>GeoNames.org</geonames> (CC BY 4.0). Waktu sholat dihitung secara otomatis, bukan rujukan resmi — silakan periksa dengan masjid setempat untuk jadwal komunitas.",
+    "metaTitle": "Jadwal Sholat {city} — {country}",
+    "metaDescription": "Jadwal sholat akurat untuk {city}, {country} — waktu Subuh, Zuhur, Ashar, Maghrib dan Isya hari ini, dengan arah kiblat, tanggal Hijriah dan kalender bulanan."
+  },
+  "prayers": {
+    "fajr": "Subuh",
+    "sunrise": "Terbit",
+    "dhuhr": "Zuhur",
+    "asr": "Ashar",
+    "maghrib": "Maghrib",
+    "isha": "Isya"
+  },
+  "table": {
+    "next": "Berikutnya",
+    "in": "dalam",
+    "loading": "Memuat jadwal hari ini…"
+  },
+  "methodSelector": {
+    "toggle": "Ubah metode perhitungan & mazhab",
+    "methodLabel": "Metode",
+    "madhabLabel": "Mazhab (Ashar)",
+    "shafi": "Syafi'i",
+    "hanafi": "Hanafi"
+  },
+  "calendar": {
+    "show": "Tampilkan kalender bulanan",
+    "hide": "Sembunyikan kalender bulanan",
+    "date": "Tanggal"
+  },
+  "qibla": {
+    "heading": "Arah kiblat",
+    "fromNorth": "{deg} dari utara sejati"
+  },
+  "hijri": {
+    "heading": "Tanggal Hijriah",
+    "approximate": "(perkiraan)",
+    "yearSuffix": "H"
+  },
+  "faq": {
+    "fajrQuestion": "Jam berapa waktu Subuh di {city} hari ini?",
+    "fajrAnswer": "Waktu Subuh di {city} berubah setiap hari mengikuti posisi matahari — lihat waktu tepatnya hari ini pada tabel di atas, dihitung langsung berdasarkan koordinat dan zona waktu {city}.",
+    "methodQuestion": "Metode perhitungan apa yang digunakan untuk {city}, {country}?",
+    "methodAnswer": "Jadwal sholat untuk {city} menggunakan metode perhitungan {method} secara default. Anda dapat mengubah metode dan mazhab menggunakan pemilih di atas tabel jadwal.",
+    "qiblaQuestion": "Ke arah mana kiblat dari {city}?",
+    "qiblaAnswer": "Arah kiblat dari {city} ditampilkan di atas sebagai sudut dalam derajat dari utara sejati, dihitung sebagai arah lingkaran besar menuju Ka'bah di Makkah."
+  },
+  "description": {
+    "text": "Jadwal sholat di {place} dihitung menggunakan metode {method} (mazhab {madhab} untuk Ashar). {city} terletak di {lat}°, {lon}°, pada zona waktu {timezone}."
+  },
+  "pagination": {
+    "prev": "Sebelumnya",
+    "next": "Berikutnya"
+  },
+  "search": {
+    "heading": "Cari",
+    "resultsFor": "Hasil pencarian untuk \"{query}\"",
+    "noResults": "Tidak ada tempat yang cocok dengan \"{query}\".",
+    "countryLabel": "Negara"
+  },
+  "notFound": {
+    "heading": "Halaman tidak ditemukan",
+    "body": "Kami tidak dapat menemukan halaman tersebut.",
+    "homeLink": "Kembali ke beranda"
+  },
+  "apps": {
+    "heading": "Aplikasi jadwal sholat",
+    "intro": "Ingin jadwal di ponsel lengkap dengan notifikasi azan? Aplikasi berikut banyak digunakan.",
+    "reviewCount": "{count} ulasan",
+    "installs": "{count} unduhan",
+    "googlePlay": "Google Play",
+    "appStore": "App Store",
+    "ratingsNote": "Rating dan jumlah unduhan berasal dari Google Play, dicatat pada {date}. Angka ini tidak diperbarui secara langsung.",
+    "descriptions": {
+      "athan": "Jadwal sholat terverifikasi dan notifikasi azan, plus Al-Qur'an, pencari arah kiblat, dan target ibadah harian — dari IslamicFinder.org.",
+      "dawateislami": "Jadwal sholat akurat dan arah kiblat untuk membantu Anda konsisten menjalankan lima waktu sholat setiap hari.",
+      "muslimpro": "Pendamping Islami lengkap: jadwal sholat terverifikasi, notifikasi azan, Al-Qur'an lengkap, dan arah kiblat yang akurat."
+    }
+  },
+  "continents": {
+    "AF": "Afrika",
+    "AS": "Asia",
+    "EU": "Eropa",
+    "NA": "Amerika Utara",
+    "SA": "Amerika Selatan",
+    "OC": "Oseania",
+    "AN": "Antarktika"
+  },
+  "countryContent": {
+    "cityTimesItem": "Subuh {fajr} · Maghrib {maghrib}",
+    "largestCitiesIntro": "Subuh dan Maghrib pada {date} di kota-kota terpadat yang kami cakup:"
+  },
+  "stateContent": {
+    "cityTimesItem": "Subuh {fajr} · Maghrib {maghrib}",
+    "topCitiesIntro": "Subuh dan Maghrib pada {date} di tempat-tempat terbesar yang kami cakup di {state}:"
+  },
+  "homeFaq": {
+    "coverageQuestion": "Kota mana saja yang tercakup?",
+    "coverageAnswer": "{cities} kota di {countries} negara — setiap tempat berpenduduk lebih dari 15.000 jiwa, dari basis data GeoNames. Masing-masing punya halaman sendiri berisi lima waktu sholat hari ini, terbit matahari, arah kiblat, dan jadwal satu bulan penuh.",
+    "accuracyQuestion": "Seberapa akurat waktunya?",
+    "accuracyAnswer": "Dihitung dengan rumus astronomis standar yang dipakai pustaka adhan yang tepercaya, dari koordinat dan zona waktu asli tiap kota — pendekatan yang sama dengan aplikasi sholat arus utama. Subuh dan Isya bergantung pada sudut matahari yang dipilih, sehingga keduanya bisa berbeda beberapa menit antarlembaga.",
+    "methodQuestion": "Bisakah saya mengubah metode perhitungan?",
+    "methodAnswer": "Bisa. Setiap halaman kota memiliki pemilih metode dan mazhab di atas tabel waktu. Pilihan Anda disimpan di perangkat itu dan berlaku untuk setiap kota yang Anda kunjungi berikutnya.",
+    "qiblaQuestion": "Apakah situs ini menampilkan arah kiblat?",
+    "qiblaAnswer": "Setiap halaman kota memberikan kiblat sebagai sudut dalam derajat dari utara sejati, ditambah jarak lingkaran besar ke Ka'bah di Makkah. Jika Anda memakai kompas magnetik, ingatlah memperhitungkan deklinasi magnetik setempat."
+  },
+  "shadow": {
+    "once": "satu kali",
+    "twice": "dua kali"
+  },
+  "footer": {
+    "tagline": "Jadwal sholat untuk setiap kota di dunia, dihitung dari koordinat dan zona waktu masing-masing lokasi.",
+    "exploreHeading": "Jelajahi",
+    "siteHeading": "Tentang situs ini",
+    "legalHeading": "Legal",
+    "home": "Beranda",
+    "search": "Cari kota",
+    "about": "Tentang",
+    "contact": "Kontak",
+    "privacy": "Kebijakan Privasi",
+    "terms": "Ketentuan Penggunaan",
+    "disclaimer": "Penafian",
+    "copyright": "© {year} {site}. Prayer times are calculated, not an official religious ruling.",
+    "dataCredit": "Place data from <geonames>GeoNames</geonames>, licensed CC BY 4.0."
+  },
+  "pages": {
+    "lastUpdated": "Terakhir diperbarui: {date}",
+    "aboutTitle": "Tentang",
+    "contactTitle": "Kontak",
+    "privacyTitle": "Kebijakan Privasi",
+    "termsTitle": "Ketentuan Penggunaan",
+    "disclaimerTitle": "Penafian"
+  }
+}

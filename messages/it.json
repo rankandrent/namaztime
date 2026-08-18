@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "Maghrib Time — Orari di preghiera nel mondo",
+    "description": "Orari di preghiera precisi per qualsiasi città del mondo — Fajr, Dhuhr, Asr, Maghrib e Isha, con direzione della Qibla e calendario mensile."
+  },
+  "nav": {
+    "siteName": "Maghrib Time",
+    "home": "Home",
+    "searchPlaceholder": "Cerca una città o un paese…"
+  },
+  "home": {
+    "heading": "Orari di Preghiera, Ovunque",
+    "subheading": "Fajr, Dhuhr, Asr, Maghrib e Isha per ogni paese, regione e città del mondo.",
+    "browseByCountry": "Sfoglia per paese",
+    "searchLabel": "Trova la tua città",
+    "statLine": "{cities} città · {countries} paesi · {languages} lingue",
+    "popularCitiesHeading": "Orari di preghiera nelle grandi città",
+    "popularCitiesIntro": "Fajr e Maghrib il {date}, calcolati sulle coordinate e sul fuso orario propri di ogni città:",
+    "browseIntro": "Tutti i paesi che copriamo, raggruppati per continente. Ciascuno apre l'elenco delle sue regioni e città.",
+    "aboutHeading": "Come vengono calcolati questi orari",
+    "aboutBody": "Gli orari di preghiera non vengono letti da una tabella: sono calcolati dalla posizione del sole per la latitudine e la longitudine esatte del luogo che stai consultando, poi convertiti nel fuso orario di quel luogo. Per questo una città 100 km più a est mostra un Maghrib leggermente più presto, e per questo gli orari si spostano un poco ogni giorno.",
+    "aboutMethods": "Autorità diverse fissano in modo diverso gli angoli di Fajr e Isha. Ogni pagina usa per impostazione predefinita il metodo consueto di quel paese — Umm al-Qura in Arabia Saudita, Karachi in Pakistan, ISNA in Nord America — e puoi cambiare sia il metodo sia il madhhab per l'Asr in qualsiasi pagina di città.",
+    "aboutAccuracy": "Questi orari sono calcoli astronomici, non un annuncio di una moschea. I comitati locali adottano talvolta qualche minuto di differenza, in particolare per Fajr e Isha. Dove la tua moschea locale differisce, segui la tua moschea locale.",
+    "faqHeading": "Domande frequenti"
+  },
+  "country": {
+    "heading": "Orari di preghiera a {country}",
+    "capitalLine": "Capitale: {capital} · {continent}",
+    "statesHeading": "Regioni e province",
+    "citiesHeading": "Città",
+    "metaTitle": "Orari di preghiera {country} — Tutte le città",
+    "metaDescription": "Orari di preghiera per ogni città in {country} — Fajr, Dhuhr, Asr, Maghrib e Isha, calcolati in base alla posizione e al fuso orario di ogni città."
+  },
+  "state": {
+    "heading": "Orari di preghiera a {state}, {country}",
+    "citiesHeading": "Città",
+    "pageInfo": "(pagina {page} di {totalPages}, {total} in totale)",
+    "metaTitle": "Orari di preghiera {state} — {country}",
+    "metaDescription": "Orari di preghiera per le città di {state}, {country} — Fajr, Dhuhr, Asr, Maghrib e Isha, calcolati in base alle coordinate di ogni città."
+  },
+  "city": {
+    "headingWithState": "Orari di preghiera a {city}, {state}, {country}",
+    "heading": "Orari di preghiera a {city}, {country}",
+    "tagline": "Fajr, Dhuhr, Asr, Maghrib e Isha — aggiornati in tempo reale per oggi",
+    "faqHeading": "Domande frequenti",
+    "nearbyHeading": "Altre città nelle vicinanze",
+    "attribution": "Dati sui luoghi forniti da <geonames>GeoNames.org</geonames> (CC BY 4.0). Gli orari sono calcolati, non ufficiali — consultare la moschea locale per gli orari della comunità.",
+    "metaTitle": "Orari di preghiera {city} — {country}",
+    "metaDescription": "Orari di preghiera precisi per {city}, {country} — Fajr, Dhuhr, Asr, Maghrib e Isha di oggi, con direzione della Qibla, data hijri e calendario mensile."
+  },
+  "prayers": {
+    "fajr": "Fajr",
+    "sunrise": "Alba",
+    "dhuhr": "Dhuhr",
+    "asr": "Asr",
+    "maghrib": "Maghrib",
+    "isha": "Isha"
+  },
+  "table": {
+    "next": "Prossima",
+    "in": "tra",
+    "loading": "Caricamento degli orari di oggi…"
+  },
+  "methodSelector": {
+    "toggle": "Cambia metodo di calcolo e madhhab",
+    "methodLabel": "Metodo",
+    "madhabLabel": "Madhhab (Asr)",
+    "shafi": "Shafi'ita",
+    "hanafi": "Hanafita"
+  },
+  "calendar": {
+    "show": "Mostra calendario mensile",
+    "hide": "Nascondi calendario mensile",
+    "date": "Data"
+  },
+  "qibla": {
+    "heading": "Direzione della Qibla",
+    "fromNorth": "{deg} dal nord vero"
+  },
+  "hijri": {
+    "heading": "Data hijri",
+    "approximate": "(approssimativa)",
+    "yearSuffix": "AH"
+  },
+  "faq": {
+    "fajrQuestion": "A che ora è la preghiera del Fajr oggi a {city}?",
+    "fajrAnswer": "L'orario del Fajr a {city} cambia ogni giorno in base alla posizione del sole — consulta l'orario esatto di oggi nella tabella qui sopra, calcolato in tempo reale per le coordinate e il fuso orario di {city}.",
+    "methodQuestion": "Quale metodo di calcolo viene usato per {city}, {country}?",
+    "methodAnswer": "Gli orari di preghiera per {city} usano di default il metodo di calcolo {method}. Puoi cambiare metodo e madhhab tramite il selettore sopra la tabella degli orari.",
+    "qiblaQuestion": "Qual è la direzione della Qibla da {city}?",
+    "qiblaAnswer": "La direzione della Qibla da {city} è mostrata sopra come un angolo in gradi rispetto al nord vero, calcolato come la direzione lungo il cerchio massimo verso la Kaaba alla Mecca."
+  },
+  "description": {
+    "text": "Gli orari di preghiera a {place} sono calcolati con il metodo {method} (madhhab {madhab} per l'Asr). {city} si trova a {lat}°, {lon}°, nel fuso orario {timezone}."
+  },
+  "pagination": {
+    "prev": "Precedente",
+    "next": "Successiva"
+  },
+  "search": {
+    "heading": "Cerca",
+    "resultsFor": "Risultati di ricerca per \"{query}\"",
+    "noResults": "Nessun luogo trovato corrispondente a \"{query}\".",
+    "countryLabel": "Paese"
+  },
+  "notFound": {
+    "heading": "Pagina non trovata",
+    "body": "Non siamo riusciti a trovare questa pagina.",
+    "homeLink": "Torna alla home"
+  },
+  "apps": {
+    "heading": "App per gli orari di preghiera",
+    "intro": "Preferisci gli orari sul telefono, con notifica dell'adhan? Queste app sono molto usate.",
+    "reviewCount": "{count} recensioni",
+    "installs": "{count} download",
+    "googlePlay": "Google Play",
+    "appStore": "App Store",
+    "ratingsNote": "Valutazioni e download provengono da Google Play, rilevati il {date}. Non sono aggiornati in tempo reale.",
+    "descriptions": {
+      "athan": "Orari di preghiera verificati e avvisi dell'adhan, oltre al Corano, un localizzatore della qibla e obiettivi islamici quotidiani — da IslamicFinder.org.",
+      "dawateislami": "Orari di preghiera precisi e direzione della qibla per aiutarti a essere costante nelle tue cinque preghiere quotidiane.",
+      "muslimpro": "Un compagno islamico completo: orari di preghiera verificati, notifiche dell'adhan, il Corano completo e una direzione della qibla precisa."
+    }
+  },
+  "continents": {
+    "AF": "Africa",
+    "AS": "Asia",
+    "EU": "Europa",
+    "NA": "America del Nord",
+    "SA": "America del Sud",
+    "OC": "Oceania",
+    "AN": "Antartide"
+  },
+  "countryContent": {
+    "cityTimesItem": "Fajr {fajr} · Maghrib {maghrib}",
+    "largestCitiesIntro": "Fajr e Maghrib il {date} nelle città più popolose che copriamo:"
+  },
+  "stateContent": {
+    "cityTimesItem": "Fajr {fajr} · Maghrib {maghrib}",
+    "topCitiesIntro": "Fajr e Maghrib il {date} nelle località più grandi che copriamo in {state}:"
+  },
+  "homeFaq": {
+    "coverageQuestion": "Quali città sono coperte?",
+    "coverageAnswer": "{cities} città in {countries} paesi — ogni località con più di 15.000 abitanti, dal database GeoNames. Ognuna ha la propria pagina con i cinque orari di oggi, l'alba, la direzione della Qibla e un calendario mensile completo.",
+    "accuracyQuestion": "Quanto sono precisi gli orari?",
+    "accuracyAnswer": "Sono calcolati con le formule astronomiche standard usate dalla nota libreria adhan, a partire dalle coordinate e dal fuso orario reali di ogni città: lo stesso approccio delle principali app di preghiera. Fajr e Isha dipendono da un angolo solare scelto, quindi questi due possono differire di qualche minuto tra le varie autorità.",
+    "methodQuestion": "Posso cambiare il metodo di calcolo?",
+    "methodAnswer": "Sì. Ogni pagina di città ha un selettore di metodo e madhhab sopra la tabella degli orari. La tua scelta viene ricordata su quel dispositivo e si applica a ogni città visitata in seguito.",
+    "qiblaQuestion": "Il sito mostra la direzione della Qibla?",
+    "qiblaAnswer": "Ogni pagina di città indica la Qibla come angolo in gradi rispetto al nord vero, oltre alla distanza lungo il cerchio massimo fino alla Kaaba alla Mecca. Se usi una bussola magnetica, ricorda di tenere conto della declinazione magnetica locale."
+  },
+  "shadow": {
+    "once": "una volta",
+    "twice": "due volte"
+  },
+  "footer": {
+    "tagline": "Orari di preghiera per ogni città del mondo, calcolati dalle coordinate e dal fuso orario di ciascun luogo.",
+    "exploreHeading": "Esplora",
+    "siteHeading": "Informazioni sul sito",
+    "legalHeading": "Note legali",
+    "home": "Home",
+    "search": "Cerca città",
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "privacy": "Informativa sulla privacy",
+    "terms": "Termini di utilizzo",
+    "disclaimer": "Avvertenza",
+    "copyright": "© {year} {site}. Prayer times are calculated, not an official religious ruling.",
+    "dataCredit": "Place data from <geonames>GeoNames</geonames>, licensed CC BY 4.0."
+  },
+  "pages": {
+    "lastUpdated": "Ultimo aggiornamento: {date}",
+    "aboutTitle": "Chi siamo",
+    "contactTitle": "Contatti",
+    "privacyTitle": "Informativa sulla privacy",
+    "termsTitle": "Termini di utilizzo",
+    "disclaimerTitle": "Avvertenza"
+  }
+}

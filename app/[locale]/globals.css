@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/**
+ * Design tokens — light only.
+ *
+ * Deliberately single-theme at the user's direction: no dark palette and
+ * no `prefers-color-scheme` block. Because there is exactly one theme,
+ * every colour must be painted explicitly (the page can't borrow a
+ * ground from the host), which is what `body` below does.
+ *
+ * Palette follows the convention of the pages that actually rank for
+ * these queries — checked against islamicfinder.org's live prayer-times
+ * page rather than guessed: a warm cream ground (#F7F3EB there), white
+ * content cards, warm sand bands for the prayer rows (#F7F0E2), and a
+ * green accent reserved for the *current* prayer. The warmth matters
+ * beyond taste: this is a page people open at 4am, and a warm off-white
+ * is far easier on the eye than the pure white a default would give.
+ *
+ * The accent stays in the teal-green family the site already used, which
+ * also happens to match the category convention — so nothing else on the
+ * site had to be re-hued.
+ */
+:root {
+  /* Grounds and surfaces */
+  --ground: #f7f3eb;         /* warm cream page ground */
+  --surface: #ffffff;        /* content cards sit above the ground */
+  --surface-band: #f7f0e2;   /* prayer rows / striped list bands */
+  --line: #e7dfd0;
+  --line-strong: #d5c9b4;
+
+  /* Ink — warm-biased near-blacks, not pure #000 */
+  --ink: #1a1712;
+  --ink-muted: #5c5449;
+  --ink-subtle: #8a8073;
+
+  /* Accent: reserved for the active prayer and interactive states.
+     `strong` is the darker step used for link/hover text, where the
+     base accent on a cream ground is too light to hold contrast. */
+  --accent: #2f8f6f;
+  --accent-strong: #236f56;
+  --accent-ink: #ffffff;
+  --accent-tint: #e8f4ef;
+
+  /* Semantic, kept off the accent hue so "attention" never reads
+     as "branded". */
+  --warn: #a35a12;
+  --warn-tint: #fdf3e6;
+}
+
+@theme inline {
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
+  --color-surface-band: var(--surface-band);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-tint: var(--accent-tint);
+
+  --color-warn: var(--warn);
+  --color-warn-tint: var(--warn-tint);
+
+  /* Both faces are already downloaded by app/[locale]/layout.tsx. Sans
+     carries text; Mono is the data face — prayer times, coordinates,
+     countdowns — a real pairing at no extra network cost. */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  /* Previously `Arial, Helvetica, sans-serif` — the create-next-app
+     default, left in place. It overrode the Geist face that layout.tsx
+     loads on every page, so the site paid to download a webfont and then
+     rendered Arial. */
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Digits that sit in columns or tick in place must not jitter. */
+.tabular,
+table {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

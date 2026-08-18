@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "Maghrib Time — Gebetszeiten weltweit",
+    "description": "Genaue Gebetszeiten für jede Stadt der Welt — Fajr, Dhuhr, Asr, Maghrib und Ischa, mit Qibla-Richtung und Monatskalender."
+  },
+  "nav": {
+    "siteName": "Maghrib Time",
+    "home": "Startseite",
+    "searchPlaceholder": "Stadt oder Land suchen…"
+  },
+  "home": {
+    "heading": "Gebetszeiten, Überall",
+    "subheading": "Fajr, Dhuhr, Asr, Maghrib und Ischa für jedes Land, jede Region und jede Stadt der Welt.",
+    "browseByCountry": "Nach Land durchsuchen",
+    "searchLabel": "Ihre Stadt finden",
+    "statLine": "{cities} Städte · {countries} Länder · {languages} Sprachen",
+    "popularCitiesHeading": "Gebetszeiten in großen Städten",
+    "popularCitiesIntro": "Fajr und Maghrib am {date}, berechnet für die eigenen Koordinaten und die Zeitzone jeder Stadt:",
+    "browseIntro": "Alle Länder, die wir abdecken, nach Kontinent gruppiert. Jedes öffnet eine Liste seiner Regionen und Städte.",
+    "aboutHeading": "Wie diese Zeiten berechnet werden",
+    "aboutBody": "Gebetszeiten werden nicht aus einer Tabelle abgelesen — sie werden aus dem Sonnenstand für den exakten Breiten- und Längengrad des angezeigten Ortes berechnet und dann in dessen eigene Zeitzone umgerechnet. Deshalb zeigt eine 100 km weiter östlich gelegene Stadt ein etwas früheres Maghrib, und deshalb verschieben sich die Zeiten täglich ein wenig.",
+    "aboutMethods": "Verschiedene Institutionen legen die Winkel für Fajr und Ischa unterschiedlich fest. Jede Seite verwendet standardmäßig die im jeweiligen Land übliche Methode — Umm al-Qura in Saudi-Arabien, Karatschi in Pakistan, ISNA in Nordamerika — und Sie können sowohl die Methode als auch den Asr-Madhhab auf jeder Stadtseite ändern.",
+    "aboutAccuracy": "Diese Zeiten sind astronomische Berechnungen, keine Ansage aus einer Moschee. Örtliche Komitees übernehmen mitunter Abweichungen von einigen Minuten, besonders bei Fajr und Ischa. Wo Ihre örtliche Moschee abweicht, folgen Sie Ihrer örtlichen Moschee.",
+    "faqHeading": "Häufige Fragen"
+  },
+  "country": {
+    "heading": "Gebetszeiten in {country}",
+    "capitalLine": "Hauptstadt: {capital} · {continent}",
+    "statesHeading": "Regionen & Provinzen",
+    "citiesHeading": "Städte",
+    "metaTitle": "Gebetszeiten {country} — Alle Städte",
+    "metaDescription": "Gebetszeiten für jede Stadt in {country} — Fajr, Dhuhr, Asr, Maghrib und Ischa, berechnet nach Standort und Zeitzone jeder Stadt."
+  },
+  "state": {
+    "heading": "Gebetszeiten in {state}, {country}",
+    "citiesHeading": "Städte",
+    "pageInfo": "(Seite {page} von {totalPages}, {total} insgesamt)",
+    "metaTitle": "Gebetszeiten {state} — {country}",
+    "metaDescription": "Gebetszeiten für Städte in {state}, {country} — Fajr, Dhuhr, Asr, Maghrib und Ischa, berechnet nach den Koordinaten jeder Stadt."
+  },
+  "city": {
+    "headingWithState": "Gebetszeiten in {city}, {state}, {country}",
+    "heading": "Gebetszeiten in {city}, {country}",
+    "tagline": "Fajr, Dhuhr, Asr, Maghrib und Ischa — heute live aktualisiert",
+    "faqHeading": "Häufig gestellte Fragen",
+    "nearbyHeading": "Andere Städte in der Nähe",
+    "attribution": "Ortsdaten von <geonames>GeoNames.org</geonames> (CC BY 4.0). Die Gebetszeiten werden berechnet und sind nicht verbindlich — für gemeindeübliche Zeiten wenden Sie sich an Ihre örtliche Moschee.",
+    "metaTitle": "Gebetszeiten {city} — {country}",
+    "metaDescription": "Genaue Gebetszeiten für {city}, {country} — Fajr, Dhuhr, Asr, Maghrib und Ischa heute, mit Qibla-Richtung, Hidschri-Datum und Monatskalender."
+  },
+  "prayers": {
+    "fajr": "Fajr",
+    "sunrise": "Sonnenaufgang",
+    "dhuhr": "Dhuhr",
+    "asr": "Asr",
+    "maghrib": "Maghrib",
+    "isha": "Ischa"
+  },
+  "table": {
+    "next": "Nächstes Gebet",
+    "in": "in",
+    "loading": "Heutige Zeiten werden geladen…"
+  },
+  "methodSelector": {
+    "toggle": "Berechnungsmethode & Madhhab ändern",
+    "methodLabel": "Methode",
+    "madhabLabel": "Madhhab (Asr)",
+    "shafi": "Schafiitisch",
+    "hanafi": "Hanafitisch"
+  },
+  "calendar": {
+    "show": "Monatskalender anzeigen",
+    "hide": "Monatskalender ausblenden",
+    "date": "Datum"
+  },
+  "qibla": {
+    "heading": "Qibla-Richtung",
+    "fromNorth": "{deg} ab wahrer Norden"
+  },
+  "hijri": {
+    "heading": "Hidschri-Datum",
+    "approximate": "(ungefähr)",
+    "yearSuffix": "n.H."
+  },
+  "faq": {
+    "fajrQuestion": "Wann ist heute das Fajr-Gebet in {city}?",
+    "fajrAnswer": "Die Fajr-Zeit in {city} ändert sich täglich mit dem Sonnenstand — die genaue heutige Zeit finden Sie in der Tabelle oben, live berechnet für die Koordinaten und Zeitzone von {city}.",
+    "methodQuestion": "Welche Berechnungsmethode wird für {city}, {country} verwendet?",
+    "methodAnswer": "Die Gebetszeiten für {city} verwenden standardmäßig die Berechnungsmethode {method}. Sie können Methode und Madhhab über die Auswahl oberhalb der Zeittabelle ändern.",
+    "qiblaQuestion": "In welche Richtung liegt die Qibla von {city} aus?",
+    "qiblaAnswer": "Die Qibla-Richtung von {city} aus wird oben als Winkel in Grad zur wahren Nordrichtung angezeigt, berechnet als Großkreisrichtung zur Kaaba in Mekka."
+  },
+  "description": {
+    "text": "Die Gebetszeiten in {place} werden nach der Methode {method} berechnet (Madhhab {madhab} für Asr). {city} liegt auf {lat}°, {lon}° in der Zeitzone {timezone}."
+  },
+  "pagination": {
+    "prev": "Zurück",
+    "next": "Weiter"
+  },
+  "search": {
+    "heading": "Suche",
+    "resultsFor": "Suchergebnisse für „{query}“",
+    "noResults": "Keine Orte gefunden, die zu „{query}“ passen.",
+    "countryLabel": "Land"
+  },
+  "notFound": {
+    "heading": "Seite nicht gefunden",
+    "body": "Diese Seite konnten wir nicht finden.",
+    "homeLink": "Zur Startseite"
+  },
+  "apps": {
+    "heading": "Apps für Gebetszeiten",
+    "intro": "Lieber die Zeiten auf dem Handy, mit Adhan-Benachrichtigung? Diese Apps sind weit verbreitet.",
+    "reviewCount": "{count} Bewertungen",
+    "installs": "{count} Downloads",
+    "googlePlay": "Google Play",
+    "appStore": "App Store",
+    "ratingsNote": "Bewertungen und Downloadzahlen stammen von Google Play, erfasst am {date}. Sie werden nicht live aktualisiert.",
+    "descriptions": {
+      "athan": "Verifizierte Gebetszeiten und Adhan-Benachrichtigungen, dazu der Koran, ein Qibla-Finder und tägliche islamische Ziele — von IslamicFinder.org.",
+      "dawateislami": "Genaue Gebetszeiten und Qibla-Richtung, damit Sie Ihre fünf täglichen Gebete regelmäßig einhalten.",
+      "muslimpro": "Ein vollständiger islamischer Begleiter: verifizierte Gebetszeiten, Adhan-Benachrichtigungen, der vollständige Koran und eine präzise Qibla-Richtung."
+    }
+  },
+  "continents": {
+    "AF": "Afrika",
+    "AS": "Asien",
+    "EU": "Europa",
+    "NA": "Nordamerika",
+    "SA": "Südamerika",
+    "OC": "Ozeanien",
+    "AN": "Antarktis"
+  },
+  "countryContent": {
+    "cityTimesItem": "Fajr {fajr} · Maghrib {maghrib}",
+    "largestCitiesIntro": "Fajr und Maghrib am {date} in den bevölkerungsreichsten Städten, die wir abdecken:"
+  },
+  "stateContent": {
+    "cityTimesItem": "Fajr {fajr} · Maghrib {maghrib}",
+    "topCitiesIntro": "Fajr und Maghrib am {date} in den größten Orten, die wir in {state} abdecken:"
+  },
+  "homeFaq": {
+    "coverageQuestion": "Welche Städte sind abgedeckt?",
+    "coverageAnswer": "{cities} Städte in {countries} Ländern — jeder bewohnte Ort mit mehr als 15.000 Einwohnern aus der GeoNames-Datenbank. Jeder hat eine eigene Seite mit den fünf heutigen Gebetszeiten, dem Sonnenaufgang, der Qibla-Richtung und einem vollständigen Monatskalender.",
+    "accuracyQuestion": "Wie genau sind die Zeiten?",
+    "accuracyAnswer": "Sie werden mit den astronomischen Standardformeln der weithin anerkannten adhan-Bibliothek aus den echten Koordinaten und der Zeitzone jeder Stadt berechnet — derselbe Ansatz, den auch verbreitete Gebetszeiten-Apps verwenden. Fajr und Ischa hängen von einem gewählten Sonnenwinkel ab, weshalb diese beiden zwischen Institutionen um einige Minuten abweichen können.",
+    "methodQuestion": "Kann ich die Berechnungsmethode ändern?",
+    "methodAnswer": "Ja. Jede Stadtseite hat über der Zeitentabelle eine Auswahl für Methode und Madhhab. Ihre Wahl wird auf diesem Gerät gespeichert und gilt für jede danach besuchte Stadt.",
+    "qiblaQuestion": "Zeigt die Seite die Qibla-Richtung?",
+    "qiblaAnswer": "Jede Stadtseite gibt die Qibla als Winkel in Grad zur wahren Nordrichtung an, dazu die Großkreisentfernung zur Kaaba in Mekka. Wenn Sie einen Magnetkompass nutzen, denken Sie an die örtliche magnetische Deklination."
+  },
+  "shadow": {
+    "once": "einfach",
+    "twice": "doppelt"
+  },
+  "footer": {
+    "tagline": "Gebetszeiten für jede Stadt der Welt, berechnet aus den Koordinaten und der Zeitzone des jeweiligen Ortes.",
+    "exploreHeading": "Entdecken",
+    "siteHeading": "Über diese Seite",
+    "legalHeading": "Rechtliches",
+    "home": "Startseite",
+    "search": "Stadt suchen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "privacy": "Datenschutzerklärung",
+    "terms": "Nutzungsbedingungen",
+    "disclaimer": "Haftungsausschluss",
+    "copyright": "© {year} {site}. Prayer times are calculated, not an official religious ruling.",
+    "dataCredit": "Place data from <geonames>GeoNames</geonames>, licensed CC BY 4.0."
+  },
+  "pages": {
+    "lastUpdated": "Zuletzt aktualisiert: {date}",
+    "aboutTitle": "Über uns",
+    "contactTitle": "Kontakt",
+    "privacyTitle": "Datenschutzerklärung",
+    "termsTitle": "Nutzungsbedingungen",
+    "disclaimerTitle": "Haftungsausschluss"
+  }
+}

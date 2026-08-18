@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "Maghrib Time — 全球礼拜时间",
+    "description": "全球任何城市的精确礼拜时间——晨礼、晌礼、晡礼、昏礼与宵礼，附朝向方位与月历。"
+  },
+  "nav": {
+    "siteName": "Maghrib Time",
+    "home": "首页",
+    "searchPlaceholder": "搜索城市或国家…"
+  },
+  "home": {
+    "heading": "礼拜时间，遍布全球",
+    "subheading": "世界各国、各州省、各城市的晨礼、晌礼、晡礼、昏礼与宵礼时间。",
+    "browseByCountry": "按国家浏览",
+    "searchLabel": "查找您的城市",
+    "statLine": "{cities} 座城市 · {countries} 个国家 · {languages} 种语言",
+    "popularCitiesHeading": "主要城市的礼拜时间",
+    "popularCitiesIntro": "{date} 的晨礼与昏礼时间，依据每座城市自身的坐标与时区计算：",
+    "browseIntro": "我们覆盖的所有国家，按大洲分组。每个国家可展开其地区与城市列表。",
+    "aboutHeading": "这些时间如何计算",
+    "aboutBody": "礼拜时间并非查表得来，而是依据您所查看地点的精确经纬度、由太阳位置计算得出，再换算到该地点自身的时区。这就是为什么向东 100 公里的城市昏礼会略早一些，也是时间每天都会略有变化的原因。",
+    "aboutMethods": "不同机构对晨礼和宵礼的太阳角度设定各不相同。每个页面默认采用该国家通行的计算方法——沙特采用乌姆库拉、巴基斯坦采用卡拉奇、北美采用 ISNA——您也可以在任意城市页面更改计算方法与晡礼所依教法学派。",
+    "aboutAccuracy": "这些时间是天文计算结果，并非清真寺的宣告。地方委员会有时会采用相差几分钟的时间，尤其是晨礼和宵礼。若与您当地清真寺不同，请以当地清真寺为准。",
+    "faqHeading": "常见问题"
+  },
+  "country": {
+    "heading": "{country}的礼拜时间",
+    "capitalLine": "首都：{capital} · {continent}",
+    "statesHeading": "州省",
+    "citiesHeading": "城市",
+    "metaTitle": "{country}礼拜时间 — 全部城市",
+    "metaDescription": "{country}每座城市的礼拜时间——晨礼、晌礼、晡礼、昏礼与宵礼，依据各城市自身位置与时区计算。"
+  },
+  "state": {
+    "heading": "{state}，{country}的礼拜时间",
+    "citiesHeading": "城市",
+    "pageInfo": "（第 {page} 页，共 {totalPages} 页，共 {total} 个）",
+    "metaTitle": "{state}礼拜时间 — {country}",
+    "metaDescription": "{state}（{country}）各城市的礼拜时间——晨礼、晌礼、晡礼、昏礼与宵礼，依据各城市坐标计算。"
+  },
+  "city": {
+    "headingWithState": "{city}，{state}，{country}的礼拜时间",
+    "heading": "{city}，{country}的礼拜时间",
+    "tagline": "晨礼、晌礼、晡礼、昏礼与宵礼 — 今日实时更新",
+    "faqHeading": "常见问题",
+    "nearbyHeading": "附近的其他城市",
+    "attribution": "地点数据来自 <geonames>GeoNames.org</geonames>（CC BY 4.0 许可）。礼拜时间为计算所得，并非官方数据 — 社区礼拜时间请咨询当地清真寺。",
+    "metaTitle": "{city}礼拜时间 — {country}",
+    "metaDescription": "{city}（{country}）的精确礼拜时间——今日晨礼、晌礼、晡礼、昏礼与宵礼，附朝向方位、伊斯兰历日期及月历。"
+  },
+  "prayers": {
+    "fajr": "晨礼",
+    "sunrise": "日出",
+    "dhuhr": "晌礼",
+    "asr": "晡礼",
+    "maghrib": "昏礼",
+    "isha": "宵礼"
+  },
+  "table": {
+    "next": "下一次礼拜",
+    "in": "还剩",
+    "loading": "正在加载今日礼拜时间…"
+  },
+  "methodSelector": {
+    "toggle": "更改计算方法与教法学派",
+    "methodLabel": "计算方法",
+    "madhabLabel": "教法学派（晡礼）",
+    "shafi": "沙斐仪派",
+    "hanafi": "哈乃斐派"
+  },
+  "calendar": {
+    "show": "显示月历",
+    "hide": "隐藏月历",
+    "date": "日期"
+  },
+  "qibla": {
+    "heading": "朝向方向",
+    "fromNorth": "距正北 {deg}"
+  },
+  "hijri": {
+    "heading": "伊斯兰历日期",
+    "approximate": "（约）",
+    "yearSuffix": "伊斯兰历"
+  },
+  "faq": {
+    "fajrQuestion": "{city}今天的晨礼时间是几点？",
+    "fajrAnswer": "{city}的晨礼时间每天随太阳位置而变化 — 请查看上方表格中今天的准确时间，该时间根据{city}的坐标和时区实时计算。",
+    "methodQuestion": "{city}，{country}使用什么计算方法？",
+    "methodAnswer": "{city}的礼拜时间默认使用{method}计算方法。您可以使用时间表上方的选择器更改计算方法和教法学派。",
+    "qiblaQuestion": "从{city}看，朝向方向是哪里？",
+    "qiblaAnswer": "从{city}出发的朝向方向如上所示，以相对正北的角度（度）表示，计算方式为通往麦加天房的大圆方向。"
+  },
+  "description": {
+    "text": "{place}的礼拜时间使用{method}方法计算（晡礼采用{madhab}教法学派）。{city}位于{lat}°，{lon}°，时区为{timezone}。"
+  },
+  "pagination": {
+    "prev": "上一页",
+    "next": "下一页"
+  },
+  "search": {
+    "heading": "搜索",
+    "resultsFor": "“{query}”的搜索结果",
+    "noResults": "未找到与“{query}”匹配的地点。",
+    "countryLabel": "国家"
+  },
+  "notFound": {
+    "heading": "找不到页面",
+    "body": "我们找不到该页面。",
+    "homeLink": "返回首页"
+  },
+  "apps": {
+    "heading": "礼拜时间应用",
+    "intro": "想在手机上查看时间并接收宣礼提醒？以下应用使用广泛。",
+    "reviewCount": "{count} 条评价",
+    "installs": "{count} 次下载",
+    "googlePlay": "Google Play",
+    "appStore": "App Store",
+    "ratingsNote": "评分与下载量来自 Google Play，记录于 {date}，非实时更新。",
+    "descriptions": {
+      "athan": "经核实的礼拜时间与宣礼提醒，还包括古兰经、朝向指南针与每日伊斯兰目标 — 来自 IslamicFinder.org。",
+      "dawateislami": "精准的礼拜时间与朝向方向，帮助您坚持每日五次礼拜。",
+      "muslimpro": "完整的伊斯兰生活助手：经核实的礼拜时间、宣礼提醒、完整古兰经与精准朝向方向。"
+    }
+  },
+  "continents": {
+    "AF": "非洲",
+    "AS": "亚洲",
+    "EU": "欧洲",
+    "NA": "北美洲",
+    "SA": "南美洲",
+    "OC": "大洋洲",
+    "AN": "南极洲"
+  },
+  "countryContent": {
+    "cityTimesItem": "晨礼 {fajr} · 昏礼 {maghrib}",
+    "largestCitiesIntro": "{date} 我们覆盖的人口最多城市的晨礼与昏礼时间："
+  },
+  "stateContent": {
+    "cityTimesItem": "晨礼 {fajr} · 昏礼 {maghrib}",
+    "topCitiesIntro": "{date} 我们在{state}覆盖的最大地点的晨礼与昏礼时间："
+  },
+  "homeFaq": {
+    "coverageQuestion": "覆盖哪些城市？",
+    "coverageAnswer": "{countries} 个国家的 {cities} 座城市——来自 GeoNames 数据库中人口超过 15,000 的每一处聚居地。每处都有独立页面，包含当日五次礼拜时间、日出、朝向方向以及整月时间表。",
+    "accuracyQuestion": "时间有多准确？",
+    "accuracyAnswer": "采用广受信赖的 adhan 库所使用的标准天文公式，依据每座城市的真实坐标与时区计算——与主流礼拜应用所用方法相同。晨礼和宵礼取决于所选的太阳角度，因此这两项在不同机构之间可能相差几分钟。",
+    "methodQuestion": "我可以更改计算方法吗？",
+    "methodAnswer": "可以。每个城市页面在时间表上方都有计算方法与教法学派的选择器。您的选择会保存在该设备上，并应用于此后访问的每座城市。",
+    "qiblaQuestion": "网站会显示朝向方向吗？",
+    "qiblaAnswer": "每个城市页面都以相对正北的角度给出朝向，并附上到麦加天房的大圆距离。若使用磁罗盘，请记得考虑当地的磁偏角。"
+  },
+  "shadow": {
+    "once": "一倍",
+    "twice": "两倍"
+  },
+  "footer": {
+    "tagline": "全球每座城市的礼拜时间，依据各地自身的坐标与时区计算。",
+    "exploreHeading": "浏览",
+    "siteHeading": "关于本站",
+    "legalHeading": "法律信息",
+    "home": "首页",
+    "search": "搜索城市",
+    "about": "关于",
+    "contact": "联系我们",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "disclaimer": "免责声明",
+    "copyright": "© {year} {site}. Prayer times are calculated, not an official religious ruling.",
+    "dataCredit": "Place data from <geonames>GeoNames</geonames>, licensed CC BY 4.0."
+  },
+  "pages": {
+    "lastUpdated": "最后更新：{date}",
+    "aboutTitle": "关于",
+    "contactTitle": "联系我们",
+    "privacyTitle": "隐私政策",
+    "termsTitle": "使用条款",
+    "disclaimerTitle": "免责声明"
+  }
+}
