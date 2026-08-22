@@ -205,7 +205,10 @@
     "topCitiesHeading": "Prayer times in the main cities of {state}",
     "topCitiesIntro": "Fajr and Maghrib on {date} across the largest places we cover in {state}:",
     "paginationIntro": "Page {page} of {totalPages}, listing places {from}–{to} of {total} in {state}, ordered by population.",
-    "cityTimesItem": "Fajr {fajr} · Maghrib {maghrib}"
+    "cityTimesItem": "Fajr {fajr} · Maghrib {maghrib}",
+    "fallbackHeading": "Prayer times in {state}",
+    "fallbackIntro": "{state} has no city large enough for its own page, so the times below are calculated for {place}, the most populous locality in {state}.",
+    "introNoCities": "{state} is a region of {country}."
   },
   "staleNotice": {
     "message": "The times on this page were calculated for {bakedDate}. It is now {currentDate} in {city} — reload the page for today's times."

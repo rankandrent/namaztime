@@ -23,7 +23,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { store } from "@/lib/data/store";
+import { store, stateHasContent } from "@/lib/data/store";
 import { readRuntimeJson } from "@/lib/data/runtime-fetch";
 import { locales } from "@/lib/i18n/config";
 import { SITE_URL } from "./site";
@@ -97,6 +97,10 @@ async function buildPlacePaths(): Promise<string[]> {
   for (const state of [...store.admin1].sort((a, b) => a.id.localeCompare(b.id))) {
     const country = store.countryByCode.get(state.countryCode);
     if (!country) continue;
+    // Skip the ~90 states that 404 (no cities and no fallback locality —
+    // see scripts/build-admin1-fallback.ts). Listing a URL that returns
+    // 404 in the sitemap is exactly the error Search Console flags.
+    if (!stateHasContent(state)) continue;
     paths.push(`/${country.slug}/${state.slug}`);
   }
 

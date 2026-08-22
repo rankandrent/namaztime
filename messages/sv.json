@@ -137,7 +137,10 @@
   },
   "stateContent": {
     "cityTimesItem": "Fajr {fajr} · Maghrib {maghrib}",
-    "topCitiesIntro": "Fajr och Maghrib den {date} i de största orterna vi täcker i {state}:"
+    "topCitiesIntro": "Fajr och Maghrib den {date} i de största orterna vi täcker i {state}:",
+    "fallbackHeading": "Bönetider i {state}",
+    "fallbackIntro": "{state} har ingen stad som är stor nog för en egen sida, så tiderna nedan är beräknade för {place}, den folkrikaste orten i {state}.",
+    "introNoCities": "{state} är en region i {country}."
   },
   "homeFaq": {
     "coverageQuestion": "Vilka städer täcks?",

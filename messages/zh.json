@@ -137,7 +137,10 @@
   },
   "stateContent": {
     "cityTimesItem": "晨礼 {fajr} · 昏礼 {maghrib}",
-    "topCitiesIntro": "{date} 我们在{state}覆盖的最大地点的晨礼与昏礼时间："
+    "topCitiesIntro": "{date} 我们在{state}覆盖的最大地点的晨礼与昏礼时间：",
+    "fallbackHeading": "{state}的礼拜时间",
+    "fallbackIntro": "{state}没有足以拥有独立页面的城市，因此以下时间是按{state}人口最多的居民点{place}计算的。",
+    "introNoCities": "{state}是{country}的一个地区。"
   },
   "homeFaq": {
     "coverageQuestion": "覆盖哪些城市？",

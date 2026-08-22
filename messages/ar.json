@@ -137,7 +137,10 @@
   },
   "stateContent": {
     "cityTimesItem": "الفجر {fajr} · المغرب {maghrib}",
-    "topCitiesIntro": "الفجر والمغرب في {date} في أكبر المواضع التي نغطيها في {state}:"
+    "topCitiesIntro": "الفجر والمغرب في {date} في أكبر المواضع التي نغطيها في {state}:",
+    "fallbackHeading": "مواقيت الصلاة في {state}",
+    "fallbackIntro": "لا توجد في {state} مدينة كبيرة بما يكفي لصفحة خاصة بها، لذا فإن المواقيت أدناه محسوبة لـ {place}، أكثر البلدات سكانًا في {state}.",
+    "introNoCities": "{state} منطقة في {country}."
   },
   "homeFaq": {
     "coverageQuestion": "ما المدن المشمولة؟",

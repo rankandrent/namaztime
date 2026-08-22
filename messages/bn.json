@@ -137,7 +137,10 @@
   },
   "stateContent": {
     "cityTimesItem": "ফজর {fajr} · মাগরিব {maghrib}",
-    "topCitiesIntro": "{date} তারিখে {state}-এ আমাদের অন্তর্ভুক্ত বৃহত্তম স্থানগুলোতে ফজর ও মাগরিব:"
+    "topCitiesIntro": "{date} তারিখে {state}-এ আমাদের অন্তর্ভুক্ত বৃহত্তম স্থানগুলোতে ফজর ও মাগরিব:",
+    "fallbackHeading": "{state}-এ নামাজের সময়",
+    "fallbackIntro": "{state}-এ নিজস্ব পাতার জন্য যথেষ্ট বড় কোনো শহর নেই, তাই নিচের সময়গুলো {place}-এর জন্য হিসাব করা হয়েছে, যা {state}-এর সবচেয়ে জনবহুল এলাকা।",
+    "introNoCities": "{state} হলো {country}-এর একটি অঞ্চল।"
   },
   "homeFaq": {
     "coverageQuestion": "কোন শহরগুলো অন্তর্ভুক্ত?",

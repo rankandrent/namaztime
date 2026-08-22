@@ -137,7 +137,10 @@
   },
   "stateContent": {
     "cityTimesItem": "फ़ज्र {fajr} · मग़रिब {maghrib}",
-    "topCitiesIntro": "{date} को {state} में हमारे कवरेज के सबसे बड़े स्थानों में फ़ज्र और मग़रिब:"
+    "topCitiesIntro": "{date} को {state} में हमारे कवरेज के सबसे बड़े स्थानों में फ़ज्र और मग़रिब:",
+    "fallbackHeading": "{state} में नमाज़ का समय",
+    "fallbackIntro": "{state} में अपने पेज के लिए पर्याप्त बड़ा कोई शहर नहीं है, इसलिए नीचे दिए गए समय {place} के लिए निकाले गए हैं, जो {state} की सबसे अधिक आबादी वाली बस्ती है।",
+    "introNoCities": "{state}, {country} का एक क्षेत्र है।"
   },
   "homeFaq": {
     "coverageQuestion": "कौन से शहर शामिल हैं?",

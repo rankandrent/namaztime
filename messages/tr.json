@@ -137,7 +137,10 @@
   },
   "stateContent": {
     "cityTimesItem": "İmsak {fajr} · Akşam {maghrib}",
-    "topCitiesIntro": "{date} tarihinde {state} içinde kapsadığımız en büyük yerlerde İmsak ve Akşam:"
+    "topCitiesIntro": "{date} tarihinde {state} içinde kapsadığımız en büyük yerlerde İmsak ve Akşam:",
+    "fallbackHeading": "{state} namaz vakitleri",
+    "fallbackIntro": "{state} içinde kendi sayfasına sahip olacak kadar büyük bir şehir yok; bu nedenle aşağıdaki vakitler {state} bölgesinin en kalabalık yerleşimi olan {place} için hesaplanmıştır.",
+    "introNoCities": "{state}, {country} bölgesidir."
   },
   "homeFaq": {
     "coverageQuestion": "Hangi şehirler kapsanıyor?",

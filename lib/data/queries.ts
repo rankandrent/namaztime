@@ -1,4 +1,4 @@
-import { store } from "./store";
+import { store, stateHasContent } from "./store";
 import { haversineKm } from "@/lib/prayer-times/qibla";
 import type { City, Country, Admin1 } from "./types";
 
@@ -54,7 +54,16 @@ export async function resolveRegionOrCity(
   | { kind: "not-found" }
 > {
   const state = store.admin1BySlugInCountry.get(`${countryCode}/${regionSlug}`);
-  if (state) return { kind: "state", state };
+  if (state) {
+    // A state with neither a city in the main dataset nor a fallback
+    // locality has nothing to say — no cities to list and no coordinate
+    // to compute prayer times at. ~90 states are in this position and
+    // they are genuinely uninhabited (Redonda, Rose Island, and similar).
+    // 404 rather than serve a page whose entire purpose is times it
+    // cannot produce; sitemap-source.ts excludes the same set.
+    if (!stateHasContent(state)) return { kind: "not-found" };
+    return { kind: "state", state };
+  }
 
   const cities = await store.loadCitiesForCountry(countryCode);
   const city = cities.find((c) => c.admin1Id === null && c.slug === regionSlug);

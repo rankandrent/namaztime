@@ -137,7 +137,10 @@
   },
   "stateContent": {
     "cityTimesItem": "Fajr {fajr} · Maghrib {maghrib}",
-    "topCitiesIntro": "Fajr e Maghrib il {date} nelle località più grandi che copriamo in {state}:"
+    "topCitiesIntro": "Fajr e Maghrib il {date} nelle località più grandi che copriamo in {state}:",
+    "fallbackHeading": "Orari di preghiera in {state}",
+    "fallbackIntro": "{state} non ha città abbastanza grandi da avere una pagina propria, quindi gli orari sotto sono calcolati per {place}, la località più popolosa di {state}.",
+    "introNoCities": "{state} è una regione di {country}."
   },
   "homeFaq": {
     "coverageQuestion": "Quali città sono coperte?",

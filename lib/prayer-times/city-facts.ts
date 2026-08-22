@@ -16,7 +16,12 @@
 import { cache } from "react";
 import { DateTime } from "luxon";
 import { CalculationMethod } from "adhan";
-import { computePrayerTimes, todayInTimezone, type DailyPrayerTimes } from "./calculate";
+import {
+  computePrayerTimes,
+  computePrayerTimesWithMeta,
+  todayInTimezone,
+  type DailyPrayerTimes,
+} from "./calculate";
 import { qiblaBearing, qiblaDistanceKm, compassPoint16, type CompassPoint } from "./qibla";
 import { toHijriDate, type HijriDate } from "./hijri";
 import {
@@ -39,6 +44,12 @@ export interface CityFacts {
   date: DateTime;
   hijri: HijriDate;
   times: DailyPrayerTimes;
+  /**
+   * True inside the polar circles on days with no real sunrise/sunset,
+   * where the times above come from the Aqrab al-Balad fallback rather
+   * than the local sun. The page discloses this — see calculate.ts.
+   */
+  polarAdjusted: boolean;
 
   timezone: string;
   /** Today's offset — reading it from `date` keeps DST correct. */
@@ -83,7 +94,14 @@ function buildCityFacts({ lat, lon, timezone, countryCode }: CityFactsInput): Ci
   const madhab = defaultMadhabKeyForCountry(countryCode);
   const date = todayInTimezone(timezone);
 
-  const times = computePrayerTimes({ lat, lon, timezone, date, method, madhab });
+  const { times, polarAdjusted } = computePrayerTimesWithMeta({
+    lat,
+    lon,
+    timezone,
+    date,
+    method,
+    madhab,
+  });
 
   const params = CalculationMethod[method]();
 
@@ -103,6 +121,7 @@ function buildCityFacts({ lat, lon, timezone, countryCode }: CityFactsInput): Ci
     date,
     hijri: toHijriDate(date),
     times,
+    polarAdjusted,
     timezone,
     utcOffsetMinutes: date.offset,
     utcOffsetLabel: date.toFormat("ZZ"),

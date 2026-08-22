@@ -137,7 +137,10 @@
   },
   "stateContent": {
     "cityTimesItem": "Fajr {fajr} · Maghrib {maghrib}",
-    "topCitiesIntro": "Fajr en Maghrib op {date} in de grootste plaatsen die we in {state} behandelen:"
+    "topCitiesIntro": "Fajr en Maghrib op {date} in de grootste plaatsen die we in {state} behandelen:",
+    "fallbackHeading": "Gebedstijden in {state}",
+    "fallbackIntro": "{state} heeft geen stad die groot genoeg is voor een eigen pagina, dus de tijden hieronder zijn berekend voor {place}, de dichtstbevolkte plaats in {state}.",
+    "introNoCities": "{state} is een regio in {country}."
   },
   "homeFaq": {
     "coverageQuestion": "Welke steden worden behandeld?",

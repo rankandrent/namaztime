@@ -7,6 +7,12 @@ import { localePath } from "@/lib/i18n/paths";
 import { breadcrumbJsonLd, statePageJsonLd } from "@/lib/seo/json-ld";
 import { countryDisplayName, admin1DisplayName } from "@/lib/data/names";
 import { getHubFacts } from "@/lib/prayer-times/hub-facts";
+import { PrayerTimesTable } from "@/components/PrayerTimesTable";
+import { getAdmin1Fallback } from "@/lib/data/store";
+import {
+  defaultMethodForCountry,
+  defaultMadhabKeyForCountry,
+} from "@/lib/prayer-times/method-by-country";
 import { formatNumber, formatDate, formatCoordinate } from "@/lib/format";
 import type { City, Country, Admin1 } from "@/lib/data/types";
 
@@ -44,15 +50,28 @@ export async function StateHubContent({
 
   const facts = getHubFacts({ cities, countryCode: country.code });
 
+  // A state with no city in the main dataset (cities15000) still has to
+  // answer the question the page promises. 28.5% of states are in this
+  // position, and they previously rendered "0 populated places" with no
+  // times at all. `getAdmin1Fallback` supplies the most populous locality
+  // GeoNames knows inside the state; the block below names it explicitly
+  // rather than implying the whole province shares one clock.
+  const fallback = cities.length === 0 ? getAdmin1Fallback(state.id) : null;
+
   // Prose is built sentence-by-sentence and only from data that exists,
   // so a one-city state gets a shorter paragraph rather than a sentence
   // with an empty slot in it.
   const sentences: string[] = [
-    tContent("intro", {
-      state: stateName,
-      country: countryName,
-      cityCount: formatNumber(cities.length, locale),
-    }),
+    // "…where we cover 0 populated places" is both unhelpful and, now
+    // that these pages DO show times via the fallback locality, actively
+    // contradicts the table below it. Drop the count when there is none.
+    cities.length === 0
+      ? tContent("introNoCities", { state: stateName, country: countryName })
+      : tContent("intro", {
+          state: stateName,
+          country: countryName,
+          cityCount: formatNumber(cities.length, locale),
+        }),
   ];
   const largest = sorted[0];
   if (largest && largest.population > 0) {
@@ -149,6 +168,24 @@ export async function StateHubContent({
             entries={facts.cityTimes}
             nameFor={(e) => e.city.name}
             hrefFor={(e) => `${basePath}/${e.city.slug}`}
+          />
+        </section>
+      )}
+
+      {fallback && (
+        <section className="space-y-3">
+          <h2 className="text-xl font-semibold tracking-tight text-ink">
+            {tContent("fallbackHeading", { state: stateName })}
+          </h2>
+          <p className="text-sm text-ink-muted">
+            {tContent("fallbackIntro", { state: stateName, place: fallback.place })}
+          </p>
+          <PrayerTimesTable
+            lat={fallback.lat}
+            lon={fallback.lon}
+            timezone={fallback.timezone}
+            defaultMethod={defaultMethodForCountry(country.code)}
+            defaultMadhab={defaultMadhabKeyForCountry(country.code)}
           />
         </section>
       )}

@@ -205,7 +205,10 @@
     "topCitiesHeading": "{state} کے بڑے شہروں میں نماز کے اوقات",
     "topCitiesIntro": "{date} کو {state} کے سب سے بڑے مقامات میں فجر اور مغرب:",
     "paginationIntro": "صفحہ {page} از {totalPages}، {state} کے {total} مقامات میں سے {from}–{to} آبادی کے لحاظ سے۔",
-    "cityTimesItem": "فجر {fajr} · مغرب {maghrib}"
+    "cityTimesItem": "فجر {fajr} · مغرب {maghrib}",
+    "fallbackHeading": "{state} میں نماز کے اوقات",
+    "fallbackIntro": "{state} میں کوئی ایسا شہر نہیں جس کا اپنا صفحہ ہو، اس لیے نیچے دیے گئے اوقات {place} کے لیے شمار کیے گئے ہیں، جو {state} کی سب سے زیادہ آبادی والی بستی ہے۔",
+    "introNoCities": "{state}، {country} کا ایک علاقہ ہے۔"
   },
   "staleNotice": {
     "message": "اس صفحے کے اوقات {bakedDate} کے لیے شمار کیے گئے تھے۔ {city} میں اب {currentDate} ہے — آج کے اوقات کے لیے صفحہ ریفریش کریں۔"

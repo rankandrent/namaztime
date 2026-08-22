@@ -137,7 +137,10 @@
   },
   "stateContent": {
     "cityTimesItem": "Subuh {fajr} · Maghrib {maghrib}",
-    "topCitiesIntro": "Subuh dan Maghrib pada {date} di tempat-tempat terbesar yang kami cakup di {state}:"
+    "topCitiesIntro": "Subuh dan Maghrib pada {date} di tempat-tempat terbesar yang kami cakup di {state}:",
+    "fallbackHeading": "Jadwal sholat di {state}",
+    "fallbackIntro": "{state} tidak memiliki kota yang cukup besar untuk halamannya sendiri, jadi waktu di bawah ini dihitung untuk {place}, wilayah berpenduduk terbanyak di {state}.",
+    "introNoCities": "{state} adalah sebuah wilayah di {country}."
   },
   "homeFaq": {
     "coverageQuestion": "Kota mana saja yang tercakup?",
