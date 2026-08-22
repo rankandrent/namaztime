@@ -7,35 +7,55 @@
  *
  * Cloudflare-specific correction (2026-08-18): every statically
  * pre-rendered page adds one entry to Next's prerender manifest, and
- * OpenNext's Cloudflare adapter embeds that ENTIRE manifest directly into
- * the middleware bundle — verified by inspecting .open-next/middleware/
- * handler.mjs, which turned out to be ~34,000 near-identical JSON records
- * (route path, htmlSize, revalidate settings), one per pre-rendered page.
- * At the previous tier sizes (252 countries + 1,153 states + 1,788 cities
- * × 17 locales ≈ 54,300 pages) that manifest alone made the middleware
- * bundle ~33MB, and pushed the combined Worker past Cloudflare's 64MB
- * uncompressed cap. This isn't a build-time or sitemap-coverage concern —
- * every one of those pages is still fully correct and reachable via ISR
- * regardless of whether it's pre-rendered — so the fix is to shrink these
- * tiers, not to change what the site covers.
+ * OpenNext's Cloudflare adapter embeds that ENTIRE manifest into the
+ * middleware bundle — verified by inspecting .open-next/middleware/
+ * handler.mjs, which was ~34,000 near-identical JSON records (route path,
+ * htmlSize, revalidate settings), one per pre-rendered page. At the
+ * original tiers (252 countries + 1,153 states + 1,788 cities × 17
+ * locales ≈ 54,300 pages) that alone made the middleware bundle 33MB.
+ * Cutting the tiers took it to 6.1MB, and the tiers below cut it again to
+ * fit Cloudflare's **free-plan** 3 MiB *compressed* Worker limit.
+ *
+ * None of this changes what the site covers: every country, state and
+ * city is still fully reachable and still in the sitemap — the only
+ * difference is whether a page is pre-built or rendered on its first
+ * request (and then cached). Raise these numbers if the account moves to
+ * Workers Paid, which allows 10 MiB.
  */
 import { store } from "./store";
-import topCitiesData from "@/data/processed/top-cities.json";
 import type { City } from "./types";
 
-const topCities = topCitiesData as City[];
-
-/** Every country gets a static hub page — cheap, high-value. */
-export function getAllCountryParams(): { country: string }[] {
-  return store.countries.map((c) => ({ country: c.slug }));
+/**
+ * Read at call time via fs rather than a top-level `import` of the JSON.
+ * generateStaticParams only ever runs during `next build`, but a static
+ * import would inline all 1,788 rows (~496KB) into the *runtime* Workers
+ * bundle, where they're dead weight against a 3 MiB budget.
+ */
+async function loadTopCities(): Promise<City[]> {
+  const { readFile } = await import("node:fs/promises");
+  const path = await import("node:path");
+  const raw = await readFile(
+    path.join(process.cwd(), "data/processed/top-cities.json"),
+    "utf8"
+  );
+  return JSON.parse(raw) as City[];
 }
 
-// Cut from 40 → 6 for the Cloudflare manifest-size reason above. These are
-// the handful of highest-population countries — Pakistan/Indonesia/India/
-// Bangladesh/Nigeria/Egypt-class markets — worth having their state hubs
-// (and, via getTopCityParams, their cities) ready instantly. Every other
-// country's states/cities still render correctly on first request.
-const PRIORITY_COUNTRY_COUNT = 6;
+// Only the largest countries get a pre-built hub; the rest render on
+// first request. 252 → 30 saves 3,774 manifest entries (×17 locales).
+const PRERENDER_COUNTRY_COUNT = 30;
+
+/** Country hubs for the highest-population countries. */
+export function getAllCountryParams(): { country: string }[] {
+  return store.countries
+    .slice()
+    .sort((a, b) => b.population - a.population)
+    .slice(0, PRERENDER_COUNTRY_COUNT)
+    .map((c) => ({ country: c.slug }));
+}
+
+// State hubs are pre-built only for the very largest markets.
+const PRIORITY_COUNTRY_COUNT = 2;
 const priorityCountryCodes = new Set(
   store.countries
     .slice()
@@ -44,14 +64,15 @@ const priorityCountryCodes = new Set(
     .map((c) => c.code)
 );
 
-// Cut from ~1,788 (the full curated tier) → 150 for the same reason. The
-// full topCitiesData set is still used elsewhere (e.g. the homepage's
-// "popular cities" list) — this slice only limits what gets *pre-rendered*
-// at build time, sorted by population so the highest-traffic cities are
-// the ones kept static.
-const TOP_CITY_PARAM_COUNT = 150;
-const sortedTopCities = [...topCities].sort((a, b) => b.population - a.population);
-const prerenderCities = sortedTopCities.slice(0, TOP_CITY_PARAM_COUNT);
+/** How many of the curated top cities get pre-rendered. */
+const TOP_CITY_PARAM_COUNT = 40;
+
+async function getPrerenderCities(): Promise<City[]> {
+  const topCities = await loadTopCities();
+  return topCities
+    .sort((a, b) => b.population - a.population)
+    .slice(0, TOP_CITY_PARAM_COUNT);
+}
 
 /**
  * Params for the `[country]/[region]` route: state hubs for a priority
@@ -59,7 +80,9 @@ const prerenderCities = sortedTopCities.slice(0, TOP_CITY_PARAM_COUNT);
  * live in no-admin1 countries (which resolve as a city at this same
  * route depth — see the routing branch in that page).
  */
-export function getPriorityRegionParams(): { country: string; region: string }[] {
+export async function getPriorityRegionParams(): Promise<
+  { country: string; region: string }[]
+> {
   const countryBySlug = store.countryByCode;
   const params: { country: string; region: string }[] = [];
 
@@ -71,7 +94,7 @@ export function getPriorityRegionParams(): { country: string; region: string }[]
     }
   }
 
-  for (const city of prerenderCities) {
+  for (const city of await getPrerenderCities()) {
     if (city.admin1Id) continue; // handled as a state-hub country above
     const country = countryBySlug.get(city.countryCode);
     if (country) params.push({ country: country.slug, region: city.slug });
@@ -81,11 +104,13 @@ export function getPriorityRegionParams(): { country: string; region: string }[]
 }
 
 /** Params for the `[country]/[region]/[city]` route: the curated top-cities tier. */
-export function getTopCityParams(): { country: string; region: string; city: string }[] {
+export async function getTopCityParams(): Promise<
+  { country: string; region: string; city: string }[]
+> {
   const countryBySlug = store.countryByCode;
   const params: { country: string; region: string; city: string }[] = [];
 
-  for (const city of prerenderCities) {
+  for (const city of await getPrerenderCities()) {
     if (!city.admin1Id) continue; // no-admin1 countries resolve one level up
     const country = countryBySlug.get(city.countryCode);
     const state = store.admin1ById.get(city.admin1Id);

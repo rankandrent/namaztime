@@ -11,10 +11,8 @@ import { countryDisplayName } from "@/lib/data/names";
 import { formatNumber, formatDate } from "@/lib/format";
 import { locales } from "@/lib/i18n/config";
 import type { City } from "@/lib/data/types";
-import topCitiesData from "@/data/processed/top-cities.json";
+import { readRuntimeJson } from "@/lib/data/runtime-fetch";
 import stats from "@/data/processed/stats.json";
-
-const topCities = topCitiesData as City[];
 
 /** Continents in the order they're listed, not alphabetically by code —
  * grouping is for a reader scanning for their own region. */
@@ -47,6 +45,9 @@ export default async function HomePage({
 
   // The world's most-populous cities, with today's real times — the same
   // "say something true, not just link" principle as the hub pages.
+  // Read at runtime rather than statically imported: the page needs 8
+  // rows, and inlining all 1,788 cost ~496KB in the Workers bundle.
+  const topCities = (await readRuntimeJson<City[]>("top-cities.json")) ?? [];
   const worldCities = topCities
     .slice()
     .sort((a, b) => b.population - a.population)

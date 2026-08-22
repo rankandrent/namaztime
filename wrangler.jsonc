@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "maghrib-time",
+  "account_id": "2f574d50583817685c50dbc50fa72c55",
   "main": ".open-next/worker.js",
   // Bump this whenever revisiting deploy config — Workers behavior can be
   // gated by compatibility date, and OpenNext requires 2024-09-23+.
@@ -18,9 +19,20 @@
   // revalidation via a self-fetch) — this binding is how it does that
   // without a real network hop.
   "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "maghrib-time" }],
+  // Keep the workers.dev URL alive. NOTE: adding a `routes` entry makes
+  // wrangler disable workers.dev unless this is explicitly true — which
+  // took the site offline once already when the custom domain was added.
+  "workers_dev": true,
+  // Custom domain is commented out until maghrib-time.com is on THIS
+  // Cloudflare account. Deploying it against account
+  // 2f574d50583817685c50dbc50fa72c55 fails with "Can't infer zone from
+  // route [code: 10082]" because the zone lives on the other account
+  // this machine has been logged into (laptoper.com@gmail.com).
+  // Re-enable once the zone and the Worker are on the same account.
+  // "routes": [{ "pattern": "maghrib-time.com", "custom_domain": true }],
   "kv_namespaces": [
-    { "binding": "NEXT_INC_CACHE_KV", "id": "6e84dfb455ad446dabede9dd0ef965d6" },
-    { "binding": "NEXT_TAG_CACHE_KV", "id": "e342eb29850d4449bbbe6e2c0563162a" }
+    { "binding": "NEXT_INC_CACHE_KV", "id": "7286247772dc49ae8b20c5bffeb4e8b1" },
+    { "binding": "NEXT_TAG_CACHE_KV", "id": "0d628e9470eb46408be008cb2836d249" }
   ],
   "observability": {
     "enabled": true
