@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "maghrib-time",
-  "account_id": "2f574d50583817685c50dbc50fa72c55",
+  "account_id": "fa9a409816328cfbafbf69db248cf243",
   "main": ".open-next/worker.js",
   // Bump this whenever revisiting deploy config — Workers behavior can be
   // gated by compatibility date, and OpenNext requires 2024-09-23+.
@@ -23,16 +23,27 @@
   // wrangler disable workers.dev unless this is explicitly true — which
   // took the site offline once already when the custom domain was added.
   "workers_dev": true,
-  // Custom domain is commented out until maghrib-time.com is on THIS
-  // Cloudflare account. Deploying it against account
-  // 2f574d50583817685c50dbc50fa72c55 fails with "Can't infer zone from
-  // route [code: 10082]" because the zone lives on the other account
-  // this machine has been logged into (laptoper.com@gmail.com).
-  // Re-enable once the zone and the Worker are on the same account.
-  // "routes": [{ "pattern": "maghrib-time.com", "custom_domain": true }],
+  // Attached once the deploy to this account is verified. Apex only,
+  // deliberately: SITE_URL (lib/seo/site.ts) — and so every canonical
+  // tag, hreflang entry and sitemap URL — is https://maghrib-time.com
+  // with no www; serving www as a second custom domain would make the
+  // same ~650k pages reachable at two hostnames. If www is wanted, add a
+  // redirect rule to the apex, not a second origin.
+  // A zone route, NOT `custom_domain: true`. custom_domain makes
+  // Cloudflare create its own DNS record and it refuses when the hostname
+  // already has one ("already has externally managed DNS records
+  // [code: 100117]") — which this apex does. A route instead rides the
+  // EXISTING proxied record and intercepts matching requests, so no DNS
+  // has to be deleted. Requires the record to be proxied (orange cloud);
+  // it is — the apex resolves to Cloudflare proxy IPs.
+  // Apex only: SITE_URL (lib/seo/site.ts), and so every canonical tag,
+  // hreflang entry and sitemap URL, is https://maghrib-time.com with no
+  // www. If www is wanted, add a redirect rule to the apex rather than a
+  // second origin serving the same ~650k pages.
+  "routes": [{ "pattern": "maghrib-time.com/*", "zone_name": "maghrib-time.com" }],
   "kv_namespaces": [
-    { "binding": "NEXT_INC_CACHE_KV", "id": "7286247772dc49ae8b20c5bffeb4e8b1" },
-    { "binding": "NEXT_TAG_CACHE_KV", "id": "0d628e9470eb46408be008cb2836d249" }
+    { "binding": "NEXT_INC_CACHE_KV", "id": "6e84dfb455ad446dabede9dd0ef965d6" },
+    { "binding": "NEXT_TAG_CACHE_KV", "id": "e342eb29850d4449bbbe6e2c0563162a" }
   ],
   "observability": {
     "enabled": true
