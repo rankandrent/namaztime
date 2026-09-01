@@ -24,4 +24,22 @@ import kvTagCache from "@opennextjs/cloudflare/overrides/tag-cache/kv-next-tag-c
 export default defineCloudflareConfig({
   incrementalCache: kvIncrementalCache,
   tagCache: kvTagCache,
+  /**
+   * Serve an already-cached page straight from the incremental cache
+   * without booting the full Next.js server handler.
+   *
+   * This exists here for a specific, measured reason: on the Workers free
+   * plan a request gets **10 ms of CPU**, and a full SSR of one of these
+   * pages (parse the country's city JSON, scan for nearby cities, render
+   * ~1,300 words plus JSON-LD) sits close enough to that ceiling that it
+   * tips over under load. Googlebot crawls at far higher concurrency than
+   * a human ever will, and Search Console recorded 30-50% failed crawl
+   * requests because of it; reproduced locally at 10 concurrent requests
+   * (4/40 failed). Interception removes almost all of that work for every
+   * request after a page's first render, which is the overwhelming
+   * majority of crawl traffic.
+   *
+   * Must stay `false` if PPR is ever enabled — the two are incompatible.
+   */
+  enableCacheInterception: true,
 });
