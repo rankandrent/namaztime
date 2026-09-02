@@ -14,6 +14,7 @@ import countriesData from "@/data/processed/countries.json";
 import admin1Data from "@/data/processed/admin1.json";
 import admin1FallbackData from "@/data/processed/admin1-fallback.json";
 import admin1NoContentData from "@/data/processed/admin1-no-content.json";
+import cityCountsData from "@/public/runtime-data/city-counts.json";
 
 const countries = countriesData as Country[];
 const admin1 = admin1Data as Admin1[];
@@ -32,16 +33,58 @@ for (const a of admin1) {
   admin1ByCountry.set(a.countryCode, arr);
 }
 
-// Per-country city files are cached after first load within a server
-// instance's lifetime.
-const cityFileCache = new Map<string, City[]>();
+// Shard files are cached after first load within a server instance's
+// lifetime. Keyed by the full shard path, since one request may touch
+// more than one shard.
+const shardCache = new Map<string, City[]>();
 
-async function loadCitiesForCountry(countryCode: string): Promise<City[]> {
-  const cached = cityFileCache.get(countryCode);
+async function loadShard(key: string): Promise<City[]> {
+  const cached = shardCache.get(key);
   if (cached) return cached;
-  const cities = (await readRuntimeJson<City[]>(`cities/${countryCode}.json`)) ?? [];
-  cityFileCache.set(countryCode, cities);
+  const cities = (await readRuntimeJson<City[]>(`cities/${key}.json`)) ?? [];
+  shardCache.set(key, cities);
   return cities;
+}
+
+/**
+ * Cities of one state. This is the hot path — a city page and a state
+ * page both need exactly this and nothing more.
+ *
+ * City data is sharded per state rather than per country (see
+ * scripts/build-city-shards.ts): loading the country file meant parsing
+ * 565KB for any Chinese city, which exceeded the Workers free plan's
+ * 10ms CPU budget and returned 500 on every Chinese city page. The same
+ * lookup now reads 2-10KB.
+ */
+async function loadCitiesForState(
+  countryCode: string,
+  admin1Slug: string
+): Promise<City[]> {
+  return loadShard(`${countryCode}/${admin1Slug}`);
+}
+
+/** Cities that sit directly under a country (Singapore, Vatican, ...). */
+async function loadNoAdmin1Cities(countryCode: string): Promise<City[]> {
+  return loadShard(`${countryCode}/_none`);
+}
+
+/**
+ * The 20 most populous cities of a country — enough for a country hub's
+ * "times in its biggest places" block, which only ever shows 8.
+ */
+async function loadTopCitiesForCountry(countryCode: string): Promise<City[]> {
+  return loadShard(`${countryCode}/_top`);
+}
+
+const cityCounts = cityCountsData as Record<string, number>;
+
+/**
+ * How many cities we cover in a country. A count, not a list — city pages
+ * display this number and previously loaded the entire country file just
+ * to read `.length` off it.
+ */
+function cityCountForCountry(countryCode: string): number {
+  return cityCounts[countryCode] ?? 0;
 }
 
 export const store = {
@@ -52,7 +95,10 @@ export const store = {
   admin1ById,
   admin1BySlugInCountry,
   admin1ByCountry,
-  loadCitiesForCountry,
+  loadCitiesForState,
+  loadNoAdmin1Cities,
+  loadTopCitiesForCountry,
+  cityCountForCountry,
 };
 
 /**

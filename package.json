@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "tsx scripts/build-sitemap-paths.ts && next build",
+    "build": "tsx scripts/build-city-shards.ts && tsx scripts/build-sitemap-paths.ts && next build",
     "start": "next start",
     "lint": "eslint",
     "data:build": "tsx scripts/build-database.ts",
@@ -13,7 +13,8 @@
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "cf-upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
-    "data:sitemap": "tsx scripts/build-sitemap-paths.ts"
+    "data:sitemap": "tsx scripts/build-sitemap-paths.ts",
+    "data:shards": "tsx scripts/build-city-shards.ts"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.20.2",

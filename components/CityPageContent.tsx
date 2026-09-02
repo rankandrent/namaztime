@@ -16,7 +16,7 @@ import {
 import { getCityFacts } from "@/lib/prayer-times/city-facts";
 import { computePrayerTimes } from "@/lib/prayer-times/calculate";
 import { buildCityFaq } from "@/lib/content/city-faq";
-import { getNearestCities, getCitiesForCountry } from "@/lib/data/queries";
+import { getNearestCities, getCityCountForCountry } from "@/lib/data/queries";
 import {
   loadNamesForCountry,
   cityDisplayName,
@@ -63,7 +63,10 @@ export async function CityPageContent({
   const alternateNames = cityAlternateNames(names, city, displayName);
   const alsoKnownAs = otherScriptNames(names, city, locale, displayName);
   const nearby = await getNearestCities(city);
-  const countryCities = await getCitiesForCountry(country.code);
+  // A count, not a list: this value is only ever rendered as a number,
+  // and fetching every city in the country to read `.length` was the
+  // single most expensive thing on this page.
+  const cityCountInCountry = getCityCountForCountry(country.code);
 
   const heading = state && stateName
     ? t("headingWithState", { city: displayName, state: stateName, country: countryName })
@@ -170,7 +173,7 @@ export async function CityPageContent({
         countryName={countryName}
         stateName={stateName}
         facts={facts}
-        cityCountInCountry={countryCities.length}
+        cityCountInCountry={cityCountInCountry}
         displayName={displayName}
       />
 

@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CountryIntro, CountryCityTimesIntro } from "@/components/hub/CountryIntro";
 import { HubCityTimes } from "@/components/hub/HubCityTimes";
 import { Link } from "@/lib/i18n/navigation";
-import { getCountryBySlug, getStatesForCountry, getCitiesForCountry } from "@/lib/data/queries";
+import { getCountryBySlug, getStatesForCountry, getTopCitiesForCountry } from "@/lib/data/queries";
 import { getAllCountryParams } from "@/lib/data/static-params";
 import { buildAlternates } from "@/lib/seo/metadata";
 import { countryDisplayName } from "@/lib/data/names";
@@ -62,7 +62,9 @@ export default async function CountryPage({
   // raw read as "Pakistan is in AS".
   const continentName = tContinent(country.continent);
   const states = getStatesForCountry(country.code);
-  const cities = await getCitiesForCountry(country.code);
+  // Top cities only — getHubFacts uses 8 of them, and loading every
+  // city in the country to do that was 565KB of JSON for China.
+  const cities = await getTopCitiesForCountry(country.code);
   const facts = getHubFacts({ cities, countryCode: country.code });
 
   // Only languages we actually have a translated name for. GeoNames

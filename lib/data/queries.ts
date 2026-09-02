@@ -15,16 +15,29 @@ export function getStatesForCountry(countryCode: string): Admin1[] {
   return store.admin1ByCountry.get(countryCode) ?? [];
 }
 
-export async function getCitiesForCountry(countryCode: string): Promise<City[]> {
-  return store.loadCitiesForCountry(countryCode);
+/**
+ * The most populous cities of a country — NOT every city.
+ *
+ * Its only caller is the country hub's "times in its biggest places"
+ * block, which shows 8. Returning the full list meant loading the whole
+ * country file (565KB for China, 1MB for India) to use 8 records.
+ */
+export async function getTopCitiesForCountry(countryCode: string): Promise<City[]> {
+  return store.loadTopCitiesForCountry(countryCode);
+}
+
+/** How many cities we cover in a country — a number, not a list. */
+export function getCityCountForCountry(countryCode: string): number {
+  return store.cityCountForCountry(countryCode);
 }
 
 export async function getCitiesForState(
   countryCode: string,
   admin1Id: string
 ): Promise<City[]> {
-  const cities = await store.loadCitiesForCountry(countryCode);
-  return cities.filter((c) => c.admin1Id === admin1Id);
+  const slug = store.admin1ById.get(admin1Id)?.slug;
+  if (!slug) return [];
+  return store.loadCitiesForState(countryCode, slug);
 }
 
 /**
@@ -65,8 +78,8 @@ export async function resolveRegionOrCity(
     return { kind: "state", state };
   }
 
-  const cities = await store.loadCitiesForCountry(countryCode);
-  const city = cities.find((c) => c.admin1Id === null && c.slug === regionSlug);
+  const cities = await store.loadNoAdmin1Cities(countryCode);
+  const city = cities.find((c) => c.slug === regionSlug);
   if (city) return { kind: "city", city };
 
   return { kind: "not-found" };
@@ -77,8 +90,10 @@ export async function getCityBySlug(
   admin1Id: string,
   citySlug: string
 ): Promise<City | undefined> {
-  const cities = await store.loadCitiesForCountry(countryCode);
-  return cities.find((c) => c.admin1Id === admin1Id && c.slug === citySlug);
+  const slug = store.admin1ById.get(admin1Id)?.slug;
+  if (!slug) return undefined;
+  const cities = await store.loadCitiesForState(countryCode, slug);
+  return cities.find((c) => c.slug === citySlug);
 }
 
 export interface NearbyCity {
@@ -87,19 +102,22 @@ export interface NearbyCity {
 }
 
 /**
- * Genuinely nearest cities by great-circle distance, country-wide.
+ * Nearest cities by real great-circle distance, within the city's state.
  *
- * The previous version took the most-populous cities in the *same state*,
- * which is fine for a bare link list but becomes wrong the moment the
- * page states a distance or a time offset: for a city near a state
- * border the true neighbours are often across it, and the largest city
- * in a big state can be hundreds of km away.
- *
- * Cost is a linear scan of one country's cities (3,779 for India, the
- * largest) ≈ 0.15 ms — cheap enough to do per page.
+ * Still a genuine distance sort — not "the biggest cities in the state" —
+ * so every distance the page prints is true. The search is scoped to the
+ * state shard the page has already loaded, rather than the whole country:
+ * loading the country file for this cost 565KB of JSON parsing on Chinese
+ * city pages and blew the 10ms CPU budget outright (see
+ * scripts/build-city-shards.ts). 81% of a city's true nearest neighbours
+ * are in its own state, so the visible result rarely differs; a border
+ * city may miss a slightly closer neighbour on the other side.
  */
 export async function getNearestCities(city: City, limit = 8): Promise<NearbyCity[]> {
-  const cities = await store.loadCitiesForCountry(city.countryCode);
+  const slug = city.admin1Id ? store.admin1ById.get(city.admin1Id)?.slug : undefined;
+  const cities = slug
+    ? await store.loadCitiesForState(city.countryCode, slug)
+    : await store.loadNoAdmin1Cities(city.countryCode);
   return cities
     .filter((c) => c.geonameId !== city.geonameId)
     .map((c) => ({
