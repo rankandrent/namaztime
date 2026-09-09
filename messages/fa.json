@@ -140,7 +140,8 @@
     "topCitiesIntro": "فجر و مغرب در {date} در بزرگ‌ترین مکان‌هایی که در {state} پوشش می‌دهیم:",
     "fallbackHeading": "اوقات شرعی در {state}",
     "fallbackIntro": "در {state} شهری به اندازهٔ کافی بزرگ برای داشتن صفحهٔ اختصاصی وجود ندارد، بنابراین اوقات زیر برای {place}، پرجمعیت‌ترین آبادی {state}، محاسبه شده است.",
-    "introNoCities": "{state} یکی از مناطق {country} است."
+    "introNoCities": "{state} یکی از مناطق {country} است.",
+    "mainTimesIntro": "اوقات زیر برای {place}، بزرگ‌ترین شهری که در {state} پوشش می‌دهیم، محاسبه شده است."
   },
   "homeFaq": {
     "coverageQuestion": "چه شهرهایی پوشش داده می‌شوند؟",

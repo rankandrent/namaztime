@@ -50,13 +50,30 @@ export async function StateHubContent({
 
   const facts = getHubFacts({ cities, countryCode: country.code });
 
-  // A state with no city in the main dataset (cities15000) still has to
-  // answer the question the page promises. 28.5% of states are in this
-  // position, and they previously rendered "0 populated places" with no
-  // times at all. `getAdmin1Fallback` supplies the most populous locality
-  // GeoNames knows inside the state; the block below names it explicitly
-  // rather than implying the whole province shares one clock.
+  // Every state page shows a full prayer-times table, computed at one
+  // named place inside it.
+  //
+  // Which place depends on what we have: the state's largest city when it
+  // has one, otherwise the most populous locality GeoNames knows there
+  // (28.5% of states contain no city in cities15000 at all). Either way
+  // the place is named in the text below rather than implying a whole
+  // province shares one clock.
+  //
+  // This used to run only for the no-city states, which left the far more
+  // common case worse off: a state with cities showed nothing but a
+  // "Fajr … · Maghrib …" line per city, so a page titled "Prayer Times in
+  // Pafos" never actually printed the five prayers.
   const fallback = cities.length === 0 ? getAdmin1Fallback(state.id) : null;
+  const timesAt = fallback
+    ? { lat: fallback.lat, lon: fallback.lon, timezone: fallback.timezone, place: fallback.place }
+    : sorted[0]
+      ? {
+          lat: sorted[0].lat,
+          lon: sorted[0].lon,
+          timezone: sorted[0].timezone,
+          place: sorted[0].name,
+        }
+      : null;
 
   // Prose is built sentence-by-sentence and only from data that exists,
   // so a one-city state gets a shorter paragraph rather than a sentence
@@ -172,18 +189,20 @@ export async function StateHubContent({
         </section>
       )}
 
-      {fallback && (
+      {timesAt && (
         <section className="space-y-3">
           <h2 className="text-xl font-semibold tracking-tight text-ink">
             {tContent("fallbackHeading", { state: stateName })}
           </h2>
           <p className="text-sm text-ink-muted">
-            {tContent("fallbackIntro", { state: stateName, place: fallback.place })}
+            {fallback
+              ? tContent("fallbackIntro", { state: stateName, place: timesAt.place })
+              : tContent("mainTimesIntro", { state: stateName, place: timesAt.place })}
           </p>
           <PrayerTimesTable
-            lat={fallback.lat}
-            lon={fallback.lon}
-            timezone={fallback.timezone}
+            lat={timesAt.lat}
+            lon={timesAt.lon}
+            timezone={timesAt.timezone}
             defaultMethod={defaultMethodForCountry(country.code)}
             defaultMadhab={defaultMadhabKeyForCountry(country.code)}
           />

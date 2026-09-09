@@ -24,8 +24,22 @@ import path from "node:path";
 
 const OUT = path.join(process.cwd(), "public/runtime-data/sitemap-paths.json");
 
-/** Keep in sync with lib/seo/sitemap-source.ts — see the note there. */
-const SITEMAP_CITY_LIMIT: number | null = 5_000;
+/**
+ * How many cities the sitemap advertises, most-populous first, or `null`
+ * for all of them.
+ *
+ * `null` now. This was staged to 5,000 while the site ran on the Workers
+ * FREE plan: advertising 650k URLs invited Googlebot to crawl the entire
+ * long tail at high concurrency against an origin capped at 10 ms CPU per
+ * request, and Search Console recorded 30-50% failed crawl requests. The
+ * account is on Workers Paid now (30 s CPU per request), so there is no
+ * reason to keep pages that render correctly out of the sitemap.
+ *
+ * If crawl errors ever return, staging this back is the first lever to
+ * pull. Nothing is orphaned either way — state hubs link every city
+ * regardless of what the sitemap advertises.
+ */
+const SITEMAP_CITY_LIMIT: number | null = null;
 
 const STATIC_PATHS = ["", "/about", "/contact", "/privacy", "/terms", "/disclaimer"];
 

@@ -140,7 +140,8 @@
     "topCitiesIntro": "{date} tarihinde {state} içinde kapsadığımız en büyük yerlerde İmsak ve Akşam:",
     "fallbackHeading": "{state} namaz vakitleri",
     "fallbackIntro": "{state} içinde kendi sayfasına sahip olacak kadar büyük bir şehir yok; bu nedenle aşağıdaki vakitler {state} bölgesinin en kalabalık yerleşimi olan {place} için hesaplanmıştır.",
-    "introNoCities": "{state}, {country} bölgesidir."
+    "introNoCities": "{state}, {country} bölgesidir.",
+    "mainTimesIntro": "Aşağıdaki vakitler, {state} içinde kapsadığımız en büyük şehir olan {place} için hesaplanmıştır."
   },
   "homeFaq": {
     "coverageQuestion": "Hangi şehirler kapsanıyor?",

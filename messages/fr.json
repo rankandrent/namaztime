@@ -140,7 +140,8 @@
     "topCitiesIntro": "Fajr et Maghrib le {date} dans les plus grandes localités que nous couvrons en {state} :",
     "fallbackHeading": "Horaires de prière dans {state}",
     "fallbackIntro": "{state} n'a aucune ville assez grande pour avoir sa propre page ; les horaires ci-dessous sont donc calculés pour {place}, la localité la plus peuplée de {state}.",
-    "introNoCities": "{state} est une région de {country}."
+    "introNoCities": "{state} est une région de {country}.",
+    "mainTimesIntro": "Les horaires ci-dessous sont calculés pour {place}, la plus grande ville que nous couvrons dans {state}."
   },
   "homeFaq": {
     "coverageQuestion": "Quelles villes sont couvertes ?",

@@ -140,7 +140,8 @@
     "topCitiesIntro": "Subuh dan Maghrib pada {date} di tempat-tempat terbesar yang kami liputi di {state}:",
     "fallbackHeading": "Waktu solat di {state}",
     "fallbackIntro": "{state} tiada bandar yang cukup besar untuk halamannya sendiri, jadi waktu di bawah dikira untuk {place}, kawasan paling ramai penduduk di {state}.",
-    "introNoCities": "{state} ialah sebuah wilayah di {country}."
+    "introNoCities": "{state} ialah sebuah wilayah di {country}.",
+    "mainTimesIntro": "Waktu di bawah dikira untuk {place}, bandar terbesar yang kami liputi di {state}."
   },
   "homeFaq": {
     "coverageQuestion": "Bandar mana yang diliputi?",

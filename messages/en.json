@@ -208,7 +208,8 @@
     "cityTimesItem": "Fajr {fajr} · Maghrib {maghrib}",
     "fallbackHeading": "Prayer times in {state}",
     "fallbackIntro": "{state} has no city large enough for its own page, so the times below are calculated for {place}, the most populous locality in {state}.",
-    "introNoCities": "{state} is a region of {country}."
+    "introNoCities": "{state} is a region of {country}.",
+    "mainTimesIntro": "The times below are calculated for {place}, the largest city we cover in {state}."
   },
   "staleNotice": {
     "message": "The times on this page were calculated for {bakedDate}. It is now {currentDate} in {city} — reload the page for today's times."
