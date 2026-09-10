@@ -41,6 +41,18 @@
   // www. If www is wanted, add a redirect rule to the apex rather than a
   // second origin serving the same ~650k pages.
   "routes": [{ "pattern": "maghrib-time.com/*", "zone_name": "maghrib-time.com" }],
+  // Revalidation queue for ISR. `enableCacheInterception` in
+  // open-next.config.ts REQUIRES a real queue: when the interceptor finds
+  // a cached page past its revalidate window it calls queue.send(), and
+  // with no queue bound OpenNext's default throws
+  // "FatalError: Dummy queue is not implemented" — which surfaced as a
+  // 500 on ~30% of requests, but only once pages started going stale, so
+  // it passed every test on the day it shipped and broke the next day.
+  // DOQueueHandler is exported by .open-next/worker.js already.
+  "durable_objects": {
+    "bindings": [{ "name": "NEXT_CACHE_DO_QUEUE", "class_name": "DOQueueHandler" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["DOQueueHandler"] }],
   "kv_namespaces": [
     { "binding": "NEXT_INC_CACHE_KV", "id": "6e84dfb455ad446dabede9dd0ef965d6" },
     { "binding": "NEXT_TAG_CACHE_KV", "id": "e342eb29850d4449bbbe6e2c0563162a" }

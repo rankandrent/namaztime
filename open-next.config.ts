@@ -1,6 +1,7 @@
 import { defineCloudflareConfig } from "@opennextjs/cloudflare";
 import kvIncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/kv-incremental-cache";
 import kvTagCache from "@opennextjs/cloudflare/overrides/tag-cache/kv-next-tag-cache";
+import doQueue from "@opennextjs/cloudflare/overrides/queue/do-queue";
 
 /**
  * Incremental cache: where rendered HTML for ISR pages lives. This is NOT
@@ -24,6 +25,18 @@ import kvTagCache from "@opennextjs/cloudflare/overrides/tag-cache/kv-next-tag-c
 export default defineCloudflareConfig({
   incrementalCache: kvIncrementalCache,
   tagCache: kvTagCache,
+  /**
+   * Durable-Object queue for ISR revalidation.
+   *
+   * Not optional alongside `enableCacheInterception` below: the
+   * interceptor enqueues a revalidation whenever it serves a page that is
+   * past its window, and the default "dummy" queue throws
+   * `FatalError: Dummy queue is not implemented`. That took ~30% of
+   * requests to 500 — and only a day AFTER the deploy, once the first
+   * pages went stale, which is why the deploy-day tests all passed.
+   * Requires the NEXT_CACHE_DO_QUEUE binding in wrangler.jsonc.
+   */
+  queue: doQueue,
   /**
    * Serve an already-cached page straight from the incremental cache
    * without booting the full Next.js server handler.
