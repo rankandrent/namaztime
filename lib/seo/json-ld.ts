@@ -116,6 +116,7 @@ export function cityPlaceJsonLd({
       "@type": "City",
       "@id": `${url}#place`,
       name: displayName,
+      sameAs: `https://www.geonames.org/${city.geonameId}/`,
       ...(alternateNames.length > 0 ? { alternateName: alternateNames } : {}),
       geo,
       address: {
@@ -152,6 +153,62 @@ export function faqJsonLd(items: { question: string; answer: string }[]) {
         text: item.answer,
       },
     })),
+  };
+}
+
+export function cityDatasetJsonLd({
+  cityName,
+  countryName,
+  path,
+}: {
+  cityName: string;
+  countryName: string;
+  path: string;
+}) {
+  const url = `${SITE_URL}${path}`;
+  const now = new Date();
+  const year = now.getUTCFullYear();
+  const month = String(now.getUTCMonth() + 1).padStart(2, "0");
+  const monthName = now.toLocaleString("en-US", { month: "long" });
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": `${url}#dataset`,
+    name: `${cityName} Islamic Prayer Times Monthly Timetable (${monthName} ${year})`,
+    description: `Daily astronomical prayer times for ${cityName}, ${countryName}, including Fajr, Sunrise, Dhuhr, Asr, Maghrib, and Isha.`,
+    keywords: [
+      "prayer times",
+      "maghrib time",
+      "namaz timings",
+      `${cityName} prayer times`,
+      "salah timetable",
+      "iftar schedule"
+    ],
+    spatialCoverage: {
+      "@id": `${url}#place`,
+    },
+    temporalCoverage: `${year}-${month}-01/${year}-${month}-30`,
+    variableMeasured: [
+      { "@type": "PropertyValue", name: "Fajr", description: "Astronomical dawn prayer start time" },
+      { "@type": "PropertyValue", name: "Sunrise", description: "Solar sunrise time" },
+      { "@type": "PropertyValue", name: "Dhuhr", description: "Midday solar noon prayer start time" },
+      { "@type": "PropertyValue", name: "Asr", description: "Afternoon shadow prayer start time" },
+      { "@type": "PropertyValue", name: "Maghrib", description: "Sunset prayer and fasting iftar time" },
+      { "@type": "PropertyValue", name: "Isha", description: "Nightfall prayer start time" }
+    ],
+    creator: {
+      "@type": "Organization",
+      name: "Maghrib Time",
+      url: `${SITE_URL}/`
+    },
+    distribution: [
+      {
+        "@type": "DataDownload",
+        encodingFormat: "text/html",
+        contentUrl: url
+      }
+    ]
   };
 }
 
@@ -289,6 +346,13 @@ export function websiteJsonLd({
     description,
     url: localeUrl(locale, ""),
     inLanguage: locale,
+    publisher: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}#organization`,
+      name: "Maghrib Time",
+      url: SITE_URL,
+      logo: `${SITE_URL}/favicon.ico`,
+    },
     potentialAction: {
       "@type": "SearchAction",
       target: {
@@ -297,5 +361,17 @@ export function websiteJsonLd({
       },
       "query-input": "required name=search_term_string",
     },
+  };
+}
+
+export function organizationJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${SITE_URL}#organization`,
+    name: "Maghrib Time",
+    url: SITE_URL,
+    logo: `${SITE_URL}/favicon.ico`,
+    description: "Global astronomical Islamic prayer times and Qibla direction platform.",
   };
 }

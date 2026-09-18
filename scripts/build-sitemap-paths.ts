@@ -21,6 +21,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { getCityTier } from "../lib/seo/tier-classifier";
 
 const OUT = path.join(process.cwd(), "public/runtime-data/sitemap-paths.json");
 
@@ -90,15 +91,28 @@ function main() {
       ? searchIndex
       : [...searchIndex].sort((a, b) => b.population - a.population).slice(0, SITEMAP_CITY_LIMIT);
 
+  let indexedCityCount = 0;
+  let prunedCityCount = 0;
+
   for (const city of [...staged].sort(
     (a, b) => a.countryCode.localeCompare(b.countryCode) || a.geonameId - b.geonameId
   )) {
+    const tier = getCityTier(city.countryCode, city.population || 0);
+    if (tier === "C") {
+      prunedCityCount++;
+      continue;
+    }
+
+    indexedCityCount++;
     paths.push(
       city.admin1Slug
         ? `/${city.countrySlug}/${city.admin1Slug}/${city.slug}`
         : `/${city.countrySlug}/${city.slug}`
     );
   }
+
+  console.log(`Indexed cities (Tier A + B): ${indexedCityCount}`);
+  console.log(`Pruned cities (Tier C noindex): ${prunedCityCount}`);
 
   // The date the underlying place data last changed — not "now".
   const lastModified = fs

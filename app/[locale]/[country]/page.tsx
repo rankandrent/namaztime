@@ -38,6 +38,17 @@ export async function generateMetadata({
     title: t("metaTitle", { country: countryName }),
     description: t("metaDescription", { country: countryName }),
     alternates: buildAlternates(locale, `/${country.slug}`),
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
   };
 }
 

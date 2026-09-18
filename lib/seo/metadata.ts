@@ -7,6 +7,7 @@ import {
   countryDisplayName,
 } from "@/lib/data/names";
 import type { City, Country, Admin1 } from "@/lib/data/types";
+import { getCityTier, getCityRobots } from "@/lib/seo/tier-classifier";
 
 /**
  * Title + description for a city page — also used by the region route's
@@ -39,6 +40,9 @@ export async function cityMetadata({
   const cityName = cityDisplayName(names, city, locale);
   const countryName = countryDisplayName(country, locale);
 
+  const tier = getCityTier(country.code, city.population || 0);
+  const robots = getCityRobots(tier);
+
   return {
     // metaTitle, not the <h1> key — the title has a ~60-character SERP
     // budget and a different job. The state is deliberately omitted:
@@ -50,6 +54,7 @@ export async function cityMetadata({
     // which have no length budget.
     title: t("metaTitle", { city: cityName, country: countryName }),
     description: t("metaDescription", { city: cityName, country: countryName }),
+    robots,
   };
 }
 

@@ -42,6 +42,17 @@ export async function generateMetadata({
     title: t("metaTitle", { state: stateName, country: countryName }),
     description: t("metaDescription", { state: stateName, country: countryName }),
     alternates: buildAlternates(locale, path),
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
   };
 }
 

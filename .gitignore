@@ -62,3 +62,12 @@ data/raw/
 # deliberately NOT ignored — store.ts imports it statically, so tsc would
 # fail on a fresh clone before the first build.
 public/runtime-data/cities/
+
+# Static sitemap output from scripts/generate_*sitemap*.py. The LIVE sitemap
+# is the dynamic tier-filtered system (app/sitemap.ts + /sitemap_index.xml
+# route, sourced from public/runtime-data/sitemap-paths.json). These static
+# files conflicted with it at /sitemap_index.xml and only covered ~17% of
+# URLs, so they are not shipped. Do not commit them.
+public/sitemaps/
+public/sitemap_index.xml
+/output/

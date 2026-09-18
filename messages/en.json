@@ -39,14 +39,14 @@
     "metaDescription": "Prayer times for cities in {state}, {country} — Fajr, Dhuhr, Asr, Maghrib and Isha namaz timings, calculated for each city's own coordinates."
   },
   "city": {
-    "headingWithState": "Prayer Times in {city}, {state}, {country}",
-    "heading": "Prayer Times in {city}, {country}",
+    "headingWithState": "Maghrib Time & Prayer Times in {city}, {state}",
+    "heading": "Maghrib Time & Prayer Times in {city}, {country}",
     "tagline": "Fajr, Dhuhr, Asr, Maghrib & Isha — updated live for today",
     "faqHeading": "Frequently asked questions",
     "nearbyHeading": "Other cities nearby",
     "attribution": "Place data from <geonames>GeoNames.org</geonames> (CC BY 4.0). Prayer times are calculated, not authoritative — consult your local mosque for community-observed times.",
-    "metaDescription": "Accurate prayer times for {city}, {country} — today's Fajr, Dhuhr, Asr, Maghrib and Isha namaz timings, with Qibla direction and a monthly calendar.",
-    "metaTitle": "{city} Prayer Times Today — {country}"
+    "metaDescription": "Accurate Maghrib time today in {city}, {country}. Get today's Fajr, Dhuhr, Asr, Maghrib and Isha namaz timings, Qibla direction, and monthly calendar timetable.",
+    "metaTitle": "{city} Maghrib Time Today — Namaz & Prayer Timings"
   },
   "prayers": {
     "fajr": "Fajr",

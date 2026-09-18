@@ -27,7 +27,7 @@ import {
 } from "@/lib/data/names";
 import { store } from "@/lib/data/store";
 import { localePath } from "@/lib/i18n/paths";
-import { breadcrumbJsonLd, cityPlaceJsonLd, faqJsonLd } from "@/lib/seo/json-ld";
+import { breadcrumbJsonLd, cityPlaceJsonLd, faqJsonLd, cityDatasetJsonLd } from "@/lib/seo/json-ld";
 import { formatDate } from "@/lib/format";
 import type { City, Country, Admin1 } from "@/lib/data/types";
 
@@ -108,6 +108,7 @@ export async function CityPageContent({
       facts,
     }),
     faqJsonLd(faqItems.map((f) => ({ question: f.question, answer: f.answer }))),
+    cityDatasetJsonLd({ cityName: displayName, countryName, path }),
   ];
 
   // Maghrib offset vs this city, for the nearby list. One extra compute

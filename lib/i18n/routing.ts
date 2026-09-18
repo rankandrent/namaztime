@@ -28,5 +28,10 @@ export const routing = defineRouting({
   // on bare "/" no longer auto-redirects to their browser's language;
   // they see English with the switcher in the header, which is a fair
   // trade for every other URL on the site staying trustworthy.
+  // Disabled to prevent next-intl from setting `Set-Cookie: NEXT_LOCALE` on every
+  // response. When Set-Cookie is emitted, Cloudflare Edge CDN bypasses caching,
+  // forcing every request to hit the origin Worker. Disabling the cookie allows
+  // Edge CDN to cache HTML globally.
+  localeCookie: false,
   localeDetection: false,
 });
