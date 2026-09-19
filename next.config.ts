@@ -21,6 +21,31 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async headers() {
+    // Security/best-practice response headers. Deliberately NO
+    // X-Frame-Options / frame-ancestors CSP: the /embed/* routes exist to
+    // be iframed on other sites, and a global frame block would break that
+    // feature. These headers apply to every route.
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          // HSTS — tells browsers to always use HTTPS. Two years, with
+          // subdomains and preload-eligible. A minor trust/ranking signal
+          // and a real security win.
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+          // Stops browsers MIME-sniffing a response into a different type.
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          // Send only the origin as referrer cross-site; full path
+          // same-origin. Standard privacy-preserving default.
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+        ],
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);
