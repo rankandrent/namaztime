@@ -40,7 +40,13 @@
   // hreflang entry and sitemap URL, is https://maghrib-time.com with no
   // www. If www is wanted, add a redirect rule to the apex rather than a
   // second origin serving the same ~650k pages.
-  "routes": [{ "pattern": "maghrib-time.com/*", "zone_name": "maghrib-time.com" }],
+  // Apex serves the site; www is routed here only so middleware.ts can
+  // 301 it to the apex (its proxied CNAME already resolves to Cloudflare,
+  // but with no route the Worker never saw those requests -> they errored).
+  "routes": [
+    { "pattern": "maghrib-time.com/*", "zone_name": "maghrib-time.com" },
+    { "pattern": "www.maghrib-time.com/*", "zone_name": "maghrib-time.com" }
+  ],
   // Revalidation queue for ISR. `enableCacheInterception` in
   // open-next.config.ts REQUIRES a real queue: when the interceptor finds
   // a cached page past its revalidate window it calls queue.send(), and
